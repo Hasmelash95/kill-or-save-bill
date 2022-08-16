@@ -106,8 +106,25 @@ def good_guy():
     else:
         slow_print("Please choose A or B") 
 
+
 def dice_roll():
-    print("Your rolled", randint(1, 10))
+    """
+    Roll a 10 sided dice against the computer
+    """
+    player_roll = randint(1, 10)
+    comp_roll = randint(1, 10)
+    print(f"You rolled {player_roll} against {comp_roll}!")
+    
+    if player = guard:
+        if player_roll >= comp_roll: 
+            score_increment(iron_guard, value)
+        elif player_roll < comp_roll:
+            score_increment(smiling_shadows, value) 
+
+def score_increment(key, value):
+    for key, value in score.items():
+            score[key] += 1
+
 
 def good_guy_two():
     print("yaaay")
@@ -117,4 +134,5 @@ def bad_guy():
 
 main()
  
- 
+
+
