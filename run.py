@@ -9,6 +9,9 @@ from random import randint
 
 # Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
+GUARD = "guard"
+SHADOW = "shadow"
+player = ""
 
 def slow_print(text):
     """
@@ -57,6 +60,7 @@ def get_username():
 
 
 def choose_org():
+    global player
     """
     Function to define the two game choices (whether user wishes to be a
     good guy or a bad guy.)
@@ -74,6 +78,7 @@ def choose_org():
                        " the Smiling Shadows must be stopped before"
                        " another life is unjustly lost.")
             good_guy()
+            player == "guard"
             break
         elif org == "b":
             slow_print(f"Hello {username}, the boss has a job for you"
@@ -85,6 +90,7 @@ def choose_org():
                        " money is all yours. Minus a cut taken by yours"
                        " truly.")    
             bad_guy()
+            player == "shadow"
             break
         elif org == "exit":
             main()
@@ -100,39 +106,43 @@ def good_guy():
     if investigation_style == "a":
         good_guy_two()
     elif investigation_style == "b":
-        dice_roll()
+        dice_roll_1()
     elif investigation_style == "exit":   
         main()
     else:
         slow_print("Please choose A or B") 
 
 
-def dice_roll():
+def score_increment(key, value):
+    for key, value in score.items():
+            score[key] += 1
+    print(score)
+
+
+def dice_roll_1():
     """
-    Roll a 10 sided dice against the computer
+    Roll a 10 sided dice against the computer for Iron Guard game
     """
     player_roll = randint(1, 10)
     comp_roll = randint(1, 10)
     print(f"You rolled {player_roll} against {comp_roll}!")
     
-    if player = guard:
-        if player_roll >= comp_roll: 
-            score_increment(iron_guard, value)
-        elif player_roll < comp_roll:
-            score_increment(smiling_shadows, value) 
-
-def score_increment(key, value):
-    for key, value in score.items():
-            score[key] += 1
+    if player_roll >= comp_roll: 
+            good_guy_two()
+    else: 
+        for key, value in score.items():
+            if key == "smiling_shadows":
+                score[key] += 1
 
 
 def good_guy_two():
-    print("yaaay")
+    for key, value in score.items():
+        if key == "iron_guard":
+            score[key] += 1
 
 def bad_guy():
     print("mwahaha")
 
 main()
  
-
-
+print(score)
