@@ -113,16 +113,22 @@ def good_guy():
 
 def dice_roll_1():
     """
-    Roll a 10 sided dice against the computer for Iron Guard game
+    Roll a 10 sided dice against the computer for Iron Guard game.
+    If the player gets a higher roll, Iron Guard gets a point.
+    If the computer gets a higher roll, the Smiling Shadows do.
+    If player and computer rolls are tied, then the player wins 
+    the round. 
     """
     player_roll = randint(1, 10)
     comp_roll = randint(1, 10)
     print(f"You rolled {player_roll} against {comp_roll}!")
     
-    if player_roll >= comp_roll: 
+    if player_roll > comp_roll: 
         for team, value in score.items():
             if team == "iron_guard":
-                score[team] += 1
+                score[team] += 1    
+    elif player_roll == comp_roll:
+        dice_roll_1()   
     else: 
         for team, value in score.items():
             if team == "smiling_shadows":
@@ -134,7 +140,20 @@ def good_guy_two():
     print("woo!")
 
 def bad_guy():
-    print("mwahaha")
+    assassin_style = input("How do you approach your target?\n"
+                           " Choose A or B:\n"
+                           " A: Charm my way in\n"
+                           " B: Stalk and attack\n").lower()
+    if assassin_style == "a":
+        slow_print(f"Charmy charm")
+    elif assassin_style == "b":
+        slow_print(f"attacckkk")
+    elif assassin_style == "exit":
+        main()
+    else:
+        slow_print("Please choose A or B") 
+
+
 
 main()
  
