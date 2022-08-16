@@ -67,7 +67,7 @@ def choose_org():
                     " A: Iron Guard\n"
                     " B: Smiling Shadow\n").lower()
         if org == "a":
-            slow_print(f"Hello {username}, the citizens of Arx once" 
+            print(f"Hello {username}, the citizens of Arx once" 
                        " again need you to keep them safe. There are"
                        " rumors that a hit has been placed on poor"
                        " Bill, the Blacksmith. The vile assassins of"
@@ -107,7 +107,7 @@ def good_guy():
         slow_print("Please choose A or B") 
 
 def dice_roll():
-    print("roollll")
+    print("Your rolled", randint(1, 10))
 
 def good_guy_two():
     print("yaaay")
