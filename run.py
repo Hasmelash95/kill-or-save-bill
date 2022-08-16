@@ -49,11 +49,16 @@ def get_username():
                          " Choose a name with 1-8 chars:\n").strip()
         if len(username) >= 1 and len(username) <= 8:
             choose_org()  
+            break
         else:
             slow_print("Invalid input, username must be 1-8 chars long.\n")       
 
 
 def choose_org():
+    """
+    Function to define the two game choices (whether user wishes to be a
+    good guy or a bad guy.)
+    """
     while True:
         org = input("Are you an Iron Guard or a Smiling Shadow?\n"
                     " Choose A or B:\n"
@@ -67,6 +72,7 @@ def choose_org():
                        " the Smiling Shadows must be stopped before"
                        " another life is unjustly lost.")
             good_guy()
+            break
         elif org == "b":
             slow_print(f"Hello {username}, the boss has a job for you"
                        " and it pays verrryyy well. Brace yourselves."
@@ -77,11 +83,18 @@ def choose_org():
                        " money is all yours. Minus a cut taken by yours"
                        " truly.")    
             bad_guy()
+            break
         elif org == "exit":
             main()
         else:
             slow_print("Please choose A or B")   
 
+def good_guy():
+    print("Congrats")
+
+def bad_guy():
+    print("mwahaha")
 
 main()
+ 
  
