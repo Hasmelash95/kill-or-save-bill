@@ -52,12 +52,16 @@ def get_username():
     while True:
         username = input("What's your name?"
                          " Choose a name with 1-8 chars:\n")
-        if len(username) >= 1 and len(username) <= 8:
-            choose_org()  
-            break
-        else:
-            slow_print("Invalid input, username must be 1-8 chars long.\n")       
-
+        try: 
+            if username == "exit":
+                main()               
+            elif len(username) >= 1 and len(username) <= 8:
+                choose_org()  
+                break
+            else:
+                raise ValueError("Username must be 1-8 chars long")
+        except ValueError as e:
+            slow_print(f"Invalid input: {e}. Please try again. \n")       
 
 def choose_org():
     """
@@ -70,7 +74,7 @@ def choose_org():
                     " A: Iron Guard\n"
                     " B: Smiling Shadow\n").lower()
         if org == "a":
-            print(f"Hello {username}, the citizens of Arx once" 
+            slow_print(f"Hello {username}, the citizens of Arx once" 
                        " again need you to keep them safe. There are"
                        " rumors that a hit has been placed on poor"
                        " Bill, the Blacksmith. The vile assassins of"
