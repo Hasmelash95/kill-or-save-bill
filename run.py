@@ -5,9 +5,12 @@ import os
 import sys
 import time
 
+# Dictionary to track the scores
+score = {"iron_guard": 0, "smiling_shadows": 0}
+
 def slow_print(text):
     """
-    Function to define how the output is printed to the user. Code credit to StackOverflow.
+    Function to define how the output is printed to the user. Code credit to Stack Overflow.
     """
     for letter in text:
         sys.stdout.write(letter)
