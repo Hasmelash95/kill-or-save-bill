@@ -60,7 +60,6 @@ def get_username():
 
 
 def choose_org():
-    global player
     """
     Function to define the two game choices (whether user wishes to be a
     good guy or a bad guy.)
@@ -78,7 +77,6 @@ def choose_org():
                        " the Smiling Shadows must be stopped before"
                        " another life is unjustly lost.")
             good_guy()
-            player == "guard"
             break
         elif org == "b":
             slow_print(f"Hello {username}, the boss has a job for you"
@@ -90,7 +88,6 @@ def choose_org():
                        " money is all yours. Minus a cut taken by yours"
                        " truly.")    
             bad_guy()
-            player == "shadow"
             break
         elif org == "exit":
             main()
@@ -113,12 +110,6 @@ def good_guy():
         slow_print("Please choose A or B") 
 
 
-def score_increment(key, value):
-    for key, value in score.items():
-            score[key] += 1
-    print(score)
-
-
 def dice_roll_1():
     """
     Roll a 10 sided dice against the computer for Iron Guard game
@@ -128,17 +119,17 @@ def dice_roll_1():
     print(f"You rolled {player_roll} against {comp_roll}!")
     
     if player_roll >= comp_roll: 
-            good_guy_two()
+        for team, value in score.items():
+            if team == "iron_guard":
+                score[team] += 1
     else: 
-        for key, value in score.items():
-            if key == "smiling_shadows":
-                score[key] += 1
+        for team, value in score.items():
+            if team == "smiling_shadows":
+                score[team] += 1
 
 
 def good_guy_two():
-    for key, value in score.items():
-        if key == "iron_guard":
-            score[key] += 1
+    print("woo!")
 
 def bad_guy():
     print("mwahaha")
