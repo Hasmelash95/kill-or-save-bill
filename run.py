@@ -59,7 +59,8 @@ def get_username():
                 choose_org()  
                 break
             else:
-                raise ValueError("Username must be 1-8 chars long")
+                raise ValueError(f"Username must be 1-8 chars long,"
+                                 f" {username} is {len(username)} chars")
         except ValueError as e:
             slow_print(f"Invalid input: {e}. Please try again. \n")       
 
@@ -84,7 +85,7 @@ def choose_org():
             break
         elif org == "b":
             slow_print(f"Hello {username}, the boss has a job for you"
-                       " and it pays verrryyy well. Brace yourselves."
+                       " and it pays verrryyy well. Brace yourself."
                        " Apparently someone really has it in for Bill,"
                        " the Blacksmith. Someone wealthy. We don't"
                        " ask questions beyond that as you well know."
