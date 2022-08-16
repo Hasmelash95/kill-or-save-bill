@@ -25,29 +25,63 @@ def main():
     """
     while True:
         user_input = input("Would you like to start the game?" 
-               " Choose A or B:\nA) Yes\nB) No\n").strip().lower()
+                           " Choose A or B:\nA) Yes\nB) No\n"
+                           "You can exit anytime by typing 'exit'").strip().lower()
         if user_input == "a":
             get_username()
             break
         elif user_input == "b":
             slow_print("awww")
             break
+        elif user_input == "exit":
+            main()
         else:
-            slow_print("Please choose A or B")     
-            
+            slow_print("Please choose A or B")                
+
 
 def get_username():
     """
     Function to define what a valid username would be
     """
+    global username
     while True:
         username = input("What's your name?"
-                        " Choose a name with 1-8 chars:\n").strip()
+                         " Choose a name with 1-8 chars:\n").strip()
         if len(username) >= 1 and len(username) <= 8:
-            break
+            choose_org()  
         else:
-            slow_print("Invalid input, username must be 1-8 chars long.\n")
-        
-    return username
+            slow_print("Invalid input, username must be 1-8 chars long.\n")       
 
-main()   
+
+def choose_org():
+    while True:
+        org = input("Are you an Iron Guard or a Smiling Shadow?\n"
+                    " Choose A or B:\n"
+                    " A: Iron Guard\n"
+                    " B: Smiling Shadow\n")
+        if org == "a":
+            slow_print(f"Hello {username}, the citizens of Arx once" 
+                       " again need you to keep them safe. There are"
+                       " rumors that a hit has been placed on poor"
+                       " Bill, the Blacksmith. The vile assassins of"
+                       " the Smiling Shadows must be stopped before"
+                       " another life is unjustly lost.")
+            good_guy()
+        elif org == "b":
+            slow_print(f"Hello {username}, the boss has a job for you"
+                       " and it pays verrryyy well. Brace yourselves."
+                       " Apparently someone really has it in for Bill,"
+                       " the Blacksmith. Someone wealthy. We don't"
+                       " ask questions beyond that as you well know."
+                       " Today is your lucky day. Take this job and the"
+                       " money is all yours. Minus a cut taken by yours"
+                       " truly.")    
+            bad_guy()
+        elif org == "exit":
+            main()
+        else:
+            slow_print("Please choose A or B")   
+
+
+main()
+ 
