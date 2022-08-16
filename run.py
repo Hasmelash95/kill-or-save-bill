@@ -15,5 +15,14 @@ def slow_print(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.08)
+        time.sleep(0.07)
 
+def user_prompt(prompt):
+    """
+    Function to format the user response
+    """
+
+    user_input = input(prompt + "\n").strip().lower()
+    return user_input
+
+def 
