@@ -101,6 +101,7 @@ def good_guy():
                                 " A: Of course!\n"
                                 " B: No, I rough them up a bit.\n").lower()
     if investigation_style == "a":
+        score["iron_guard"] += 1        
         good_guy_two()
     elif investigation_style == "b":
         dice_roll_1()
@@ -126,6 +127,7 @@ def dice_roll_1():
         for team, value in score.items():
             if team == "smiling_shadows":
                 score[team] += 1
+    good_guy_two()            
 
 
 def good_guy_two():
