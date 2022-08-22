@@ -100,6 +100,11 @@ def choose_org():
             slow_print("Please choose A or B")   
 
 def good_guy():
+    """
+    Part one of the good guy game (Iron Guard), player can choose 
+    one option which will give them an automatic score increase,
+    or the other option which will take them to a dice roll.
+    """
     investigation_style = input("Do you gently question the commoners"
                                 " in the Lower Boroughs?"
                                 " Choose A or B:\n"
@@ -161,7 +166,7 @@ def good_guy_two():
             score["smiling_shadows"] += 1                  
             game_over_fail()
             break              
-        if chase_shadows == "b":
+        elif chase_shadows == "b":
             dice_roll_1()
             good_guy_final()
             break
