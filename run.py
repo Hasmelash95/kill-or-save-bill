@@ -105,22 +105,26 @@ def good_guy():
     one option which will give them an automatic score increase,
     or the other option which will take them to a dice roll.
     """
-    investigation_style = input("Do you gently question the commoners"
-                                " in the Lower Boroughs?"
-                                " Choose A or B:\n"
-                                " A: Of course!\n"
-                                " B: No, I rough them up a bit.\n").lower()
-    if investigation_style == "a":
-        score["iron_guard"] += 1 
-        slow_print("You catch more flies with honey than with vinegar.")       
-        good_guy_two()
-    elif investigation_style == "b":
-        dice_roll_1()
-        good_guy_two()
-    elif investigation_style == "exit":   
-        main()
-    else:
-        slow_print("Please choose A or B") 
+    while True:
+        investigation_style = input("Do you gently question the commoners"
+                                    " in the Lower Boroughs?"
+                                    " Choose A or B:\n"
+                                    " A: Of course!\n"
+                                    " B: No, I rough them up a bit.\n").lower()
+        if investigation_style == "a":
+            score["iron_guard"] += 1 
+            slow_print("You catch more flies with honey than with vinegar.")       
+            good_guy_two()
+            break
+        elif investigation_style == "b":
+            dice_roll_1()
+            good_guy_two()
+            break
+        elif investigation_style == "exit":   
+            main()
+            break
+        else:
+            slow_print("Please choose A or B") 
 
 
 def dice_roll_1():
