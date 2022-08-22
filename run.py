@@ -106,10 +106,12 @@ def good_guy():
                                 " A: Of course!\n"
                                 " B: No, I rough them up a bit.\n").lower()
     if investigation_style == "a":
-        score["iron_guard"] += 1        
+        score["iron_guard"] += 1 
+        slow_print("You catch more flies with honey than with vinegar.")       
         good_guy_two()
     elif investigation_style == "b":
         dice_roll_1()
+        good_guy_two()
     elif investigation_style == "exit":   
         main()
     else:
@@ -137,12 +139,37 @@ def dice_roll_1():
     else: 
         for team, value in score.items():
             if team == "smiling_shadows":
-                score[team] += 1
-    good_guy_two()            
+                score[team] += 1          
 
 
 def good_guy_two():
-    print("woo!")
+    slow_print("You find out that the an ambush is being plotted"
+               " for poor Bill in Nightingale Park. The assassins"
+               " were hired by his romantic rival, Bob.")
+    while True:
+        chase_shadows = input("What do you do?\n"
+                              " Choose A or B:\n"
+                              " A: Find Bob and bring him to justice\n"
+                              " B: Get to Nightingale Park!\n").lower()
+        if chase_shadows == "a":
+            slow_print("You find Bob in his house and bring"
+                       " him in to the House of Questions."
+                       " Unfortunately, you hear that Bill has"
+                       " been found stabbed in the Park, declared"
+                       " dead on site. With insufficient evidence,"
+                       " the wealthy merchant, Bob, is released.")  
+            score["smiling_shadows"] += 1                  
+            game_over_fail()
+            break              
+        if chase_shadows == "b":
+            dice_roll_1()
+            good_guy_final()
+            break
+        elif chase_shadows == "exit":   
+            main()
+            break
+        else:
+            slow_print("Please choose A or B") 
 
 def bad_guy():
     assassin_style = input("How do you approach your target?\n"
@@ -158,7 +185,8 @@ def bad_guy():
     else:
         slow_print("Please choose A or B") 
 
-
+def game_over_fail():
+    print("womp womp")
 
 main()
  
