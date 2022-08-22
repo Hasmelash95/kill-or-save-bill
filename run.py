@@ -43,7 +43,6 @@ def main():
         else:
             slow_print("Please choose A or B")                
 
-
 def get_username():
     """
     Function to define what a valid username would be
@@ -149,7 +148,7 @@ def dice_roll_1():
         for team, value in score.items():
             if team == "smiling_shadows":
                 score[team] += 1          
-
+    return score
 
 def good_guy_two():
     slow_print("You find out that the an ambush is being plotted"
@@ -167,7 +166,8 @@ def good_guy_two():
                        " been found stabbed in the Park, declared"
                        " dead on site. With insufficient evidence,"
                        " the wealthy merchant, Bob, is released.")  
-            score["smiling_shadows"] += 1                  
+            # Instant fail code
+            score["smiling_shadows"] += 2                  
             game_over_fail()
             break              
         elif chase_shadows == "b":
@@ -179,6 +179,24 @@ def good_guy_two():
             break
         else:
             slow_print("Please choose A or B") 
+
+def good_guy_final():
+    confront = input("You get to the Nightingale Park, what do you do?\n"
+                     " Choose A or B:\n"
+                     " A: Charge at the assassins"
+                     " as soon as you enter\n"
+                     " B: Create a noise distraction"
+                     " before aiming for the targets"
+                     " while their heads are turned\n").lower()
+    if confront == "a":
+        slow_print("You immediately charge at the assassins but"
+                   " they are professionals and simply slide"
+                   " away. You find yourself with multiple stab"
+                   " wounds in the back. It seems you will be"
+                   " joining Bill.")
+                   score["smiling_shadows"] += 1  
+                   game_over_fail()
+        
 
 def bad_guy():
     assassin_style = input("How do you approach your target?\n"
@@ -196,6 +214,7 @@ def bad_guy():
 
 def game_over_fail():
     print("womp womp")
+    print(score)
 
 main()
  
