@@ -196,7 +196,9 @@ def good_guy_final():
                    " joining Bill.")
                    score["smiling_shadows"] += 1  
                    game_over_fail()
-        
+    if confront == "b":
+        dice_roll_1()
+        final_score()
 
 def bad_guy():
     assassin_style = input("How do you approach your target?\n"
@@ -211,6 +213,9 @@ def bad_guy():
         main()
     else:
         slow_print("Please choose A or B") 
+
+def final_score():
+    
 
 def game_over_fail():
     print("womp womp")
