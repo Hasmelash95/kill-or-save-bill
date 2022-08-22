@@ -148,7 +148,7 @@ def dice_roll_1():
         for team, value in score.items():
             if team == "smiling_shadows":
                 score[team] += 1          
-    return score
+    print(score)
 
 def good_guy_two():
     slow_print("You find out that the an ambush is being plotted"
@@ -194,8 +194,8 @@ def good_guy_final():
                    " away. You find yourself with multiple stab"
                    " wounds in the back. It seems you will be"
                    " joining Bill.")
-                   score["smiling_shadows"] += 1  
-                   game_over_fail()
+        score["smiling_shadows"] += 1  
+        game_over_fail()
     if confront == "b":
         dice_roll_1()
         final_score()
@@ -214,8 +214,8 @@ def bad_guy():
     else:
         slow_print("Please choose A or B") 
 
-def final_score():
-    
+def good_guy_final_score():
+    print(score)
 
 def game_over_fail():
     print("womp womp")
