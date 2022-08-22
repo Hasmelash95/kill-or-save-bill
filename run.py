@@ -198,7 +198,7 @@ def good_guy_final():
         game_over_fail()
     if confront == "b":
         dice_roll_1()
-        final_score()
+        good_guy_final_score()
 
 def bad_guy():
     assassin_style = input("How do you approach your target?\n"
@@ -215,7 +215,12 @@ def bad_guy():
         slow_print("Please choose A or B") 
 
 def good_guy_final_score():
-    print(score)
+    for team, value in score.items():
+            if team == "iron_guard":
+                if score[team] >= 2:
+                    print("You saved him!")
+                else:
+                    print("He dead") 
 
 def game_over_fail():
     print("womp womp")
