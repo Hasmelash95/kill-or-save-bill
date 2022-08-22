@@ -181,24 +181,32 @@ def good_guy_two():
             slow_print("Please choose A or B") 
 
 def good_guy_final():
-    confront = input("You get to the Nightingale Park, what do you do?\n"
-                     " Choose A or B:\n"
-                     " A: Charge at the assassins"
-                     " as soon as you enter\n"
-                     " B: Create a noise distraction"
-                     " before aiming for the targets"
-                     " while their heads are turned\n").lower()
-    if confront == "a":
-        slow_print("You immediately charge at the assassins but"
-                   " they are professionals and simply slide"
-                   " away. You find yourself with multiple stab"
-                   " wounds in the back. It seems you will be"
-                   " joining Bill.")
-        score["smiling_shadows"] += 1  
-        game_over_fail()
-    if confront == "b":
-        dice_roll_1()
-        good_guy_final_score()
+    while True:
+        confront = input("You get to the Nightingale Park, what do you do?\n"
+                         " Choose A or B:\n"
+                         " A: Charge at the assassins"
+                         " as soon as you enter\n"
+                         " B: Create a noise distraction"
+                         " before aiming for the targets"
+                         " while their heads are turned\n").lower()
+        if confront == "a":
+            slow_print("You immediately charge at the assassins but"
+                       " they are professionals and simply slide"
+                       " away. You find yourself with multiple stab"
+                       " wounds in the back. It seems you will be"
+                       " joining Bill.")
+            score["smiling_shadows"] += 1  
+            game_over_fail()
+            break
+        elif confront == "b":
+            dice_roll_1()
+            good_guy_final_score()
+            break
+        elif confront == "exit":
+            main()
+            break
+        else: 
+            slow_print("Please choose A or B")
 
 def bad_guy():
     assassin_style = input("How do you approach your target?\n"
