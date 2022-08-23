@@ -269,6 +269,7 @@ def game_over_fail():
     print("womp womp")
     print(score)
 
+intro()
 main()
  
 print(score)
