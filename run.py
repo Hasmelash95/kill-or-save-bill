@@ -28,17 +28,17 @@ def intro():
     for team, value in score.items():
         score[team] = 0
     print(score)
-    slow_print("Welcome to this choose your own adventure"
-               " game set in the city of Arx - based on the"
-               " text-based rpg, Arx - After the Reckoning."
-               " Players can choose to play as members of the"
-               " Ion Guard (the city watch) or the elusive"
-               " group of assassins, the Smiling Shadows."
-               " As the game proceeds, players will be provided"
-               " options that they can choose from by enterring"
-               " 'a' or 'b' into the terminal. A total of two"
-               " points for the team of the players' choice is"
-               " needed to win the game. Good luck!")
+    print("Welcome to this choose your own adventure"
+          " game set in the city of Arx - based on the"
+          " text-based rpg, Arx - After the Reckoning."
+          " Players can choose to play as members of the"
+          " Ion Guard (the city watch) or the elusive"
+          " group of assassins, the Smiling Shadows."
+          " As the game proceeds, players will be provided"
+          " options that they can choose from by enterring"
+          " 'a' or 'b' into the terminal. A total of two"
+          " points for the team of the players' choice is"
+          " needed to win the game. Good luck!")
     while True:           
         proceed = input("Enter 'go' to proceed.").lower()
         try:
