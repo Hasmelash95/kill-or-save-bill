@@ -36,6 +36,15 @@ def intro():
                " 'a' or 'b' into the terminal. A total of two"
                " points for the team of the players' choice is"
                " needed to win the game. Good luck!")
+    while True:           
+        proceed = input("Enter 'Go' to proceed.").lower()
+        try:
+            if proceed == "go":
+                main()
+                break
+            else:
+                raise 
+            
 
 def main():
     """
