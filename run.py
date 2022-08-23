@@ -226,7 +226,18 @@ def good_guy_final_score():
     for team, value in score.items():
             if team == "iron_guard":
                 if score[team] >= 2:
-                    print("You saved him!")
+                    slow_print("You succeed in striking and"
+                               " killing the assassin who is"
+                               " about to deal the killing blow"
+                               " to Bill. The other, you swiftly"
+                               " hold at blade point, to bring her"
+                               " in to the House of Questions."
+                               " Maybe Bob will be brought to justice"
+                               " after all. Bill thanks you profusely"
+                               " and lets you know that you will never"
+                               " need to pay for his smithing purposes"
+                               " again. Maybe there's a promotion in"
+                               " your near future too.")
                 else:
                     print("He dead") 
 
