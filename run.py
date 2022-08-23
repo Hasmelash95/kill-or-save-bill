@@ -25,6 +25,9 @@ def intro():
     Function to define the intro text, it will be the starting 
     point whenever a user selects exit
     """
+    for team, value in score.items():
+        score[team] = 0
+    print(score)
     slow_print("Welcome to this choose your own adventure"
                " game set in the city of Arx - based on the"
                " text-based rpg, Arx - After the Reckoning."
