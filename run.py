@@ -77,7 +77,7 @@ def get_username():
                          " Choose a name with 1-8 chars:\n")
         try: 
             if username == "exit":
-                main()               
+                intro()               
             elif len(username) >= 1 and len(username) <= 8:
                 choose_org()  
                 break
@@ -118,7 +118,7 @@ def choose_org():
             bad_guy()
             break
         elif org == "exit":
-            main()
+            intro()
         else:
             slow_print("Please choose A or B")   
 
@@ -144,7 +144,7 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "exit":   
-            main()
+            intro()
             break
         else:
             slow_print("Please choose A or B") 
@@ -199,7 +199,7 @@ def good_guy_two():
             good_guy_final()
             break
         elif chase_shadows == "exit":   
-            main()
+            intro()
             break
         else:
             slow_print("Please choose A or B") 
@@ -227,7 +227,7 @@ def good_guy_final():
             good_guy_final_score()
             break
         elif confront == "exit":
-            main()
+            intro()
             break
         else: 
             slow_print("Please choose A or B")
@@ -242,7 +242,7 @@ def bad_guy():
     elif assassin_style == "b":
         slow_print(f"attacckkk")
     elif assassin_style == "exit":
-        main()
+        intro()
     else:
         slow_print("Please choose A or B") 
 
@@ -270,6 +270,5 @@ def game_over_fail():
     print(score)
 
 intro()
-main()
  
 print(score)
