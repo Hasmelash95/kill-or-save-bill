@@ -53,7 +53,8 @@ def intro():
 
 def main():
     """
-    Function defining main starting point
+    Function defining main starting point and the option
+    to start the game or not.
     """
     while True:
         user_input = input("Would you like to start the game?" 
@@ -63,16 +64,22 @@ def main():
             get_username()
             break
         elif user_input == "b":
-            slow_print("awww")
+            print("Hope to see you again soon!")
+            intro()
             break
         elif user_input == "exit":
-            main()
+            intro()
+            break
         else:
             slow_print("Please choose A or B")                
 
 def get_username():
     """
-    Function to define what a valid username would be
+    Function to define what a valid username would be. 
+    An error is raised if the conditions listed are 
+    not met.
+    User must either enter a username between 1-8 chars.
+    Typing 'exit' will take the user to intro section.
     """
     global username
     while True:
@@ -93,7 +100,7 @@ def get_username():
 def choose_org():
     """
     Function to define the two game choices (whether user wishes to be a
-    good guy or a bad guy.)
+    good guy - the Iron Guard -  or a bad guy - the Smiling Shadows.)
     """
     while True:
         org = input("Are you an Iron Guard or a Smiling Shadow?\n"
@@ -122,6 +129,7 @@ def choose_org():
             break
         elif org == "exit":
             intro()
+            break
         else:
             slow_print("Please choose A or B")   
 
@@ -174,6 +182,13 @@ def dice_roll_1():
     print(score)
 
 def good_guy_two():
+    """
+    Function for second selection of options, for the 
+    Iron Guard game one will lead to a dice roll while 
+    the other will be an instant fail that gives the
+    Smiling Shadows an additional two points and ends
+    the game.
+    """
     slow_print("You find out that the an ambush is being plotted"
                " for poor Bill in Nightingale Park. The assassins"
                " were hired by his romantic rival, Bob.")
@@ -204,6 +219,12 @@ def good_guy_two():
             slow_print("Please choose A or B") 
 
 def good_guy_final():
+    """
+    Function that defines the final pair of selections.
+    One will lead to a dice roll while the other will be
+    an instant fail that will deduct one point from the
+    Iron Guard and add a point to the Smiling Shadows.
+    """
     while True:
         confront = input("You get to the Nightingale Park, what do you do?\n"
                          " Choose A or B:\n"
@@ -248,6 +269,11 @@ def bad_guy():
         slow_print("Please choose A or B") 
 
 def good_guy_final_score():
+    """
+    Function to define what would count as a success
+    and the message to display if the player succeeds 
+    or fails.
+    """
     if score["iron_guard"] >= 2:
         slow_print("You succeed in striking and"
                    " killing the assassin who is"
@@ -269,5 +295,3 @@ def game_over_fail():
     print(score)
 
 intro()
- 
-print(score)
