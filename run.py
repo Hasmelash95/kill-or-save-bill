@@ -166,15 +166,11 @@ def dice_roll_1():
     print(f"You rolled {player_roll} against {comp_roll}!")
     
     if player_roll > comp_roll: 
-        for team, value in score.items():
-            if team == "iron_guard":
-                score[team] += 1    
+        score["iron_guard"] += 1 
     elif player_roll == comp_roll:
         dice_roll_1()   
     else: 
-        for team, value in score.items():
-            if team == "smiling_shadows":
-                score[team] += 1          
+        score["smiling_shadows"] += 1              
     print(score)
 
 def good_guy_two():
@@ -252,23 +248,21 @@ def bad_guy():
         slow_print("Please choose A or B") 
 
 def good_guy_final_score():
-    for team, value in score.items():
-            if team == "iron_guard":
-                if score[team] >= 2:
-                    slow_print("You succeed in striking and"
-                               " killing the assassin who is"
-                               " about to deal the killing blow"
-                               " to Bill. The other, you swiftly"
-                               " hold at blade point, to bring her"
-                               " in to the House of Questions."
-                               " Maybe Bob will be brought to justice"
-                               " after all. Bill thanks you profusely"
-                               " and lets you know that you will never"
-                               " need to pay for his smithing purposes"
-                               " again. Maybe there's a promotion in"
-                               " your near future too.")
-                else:
-                    print("He dead") 
+    if score["iron_guard"] >= 2:
+        slow_print("You succeed in striking and"
+                   " killing the assassin who is"
+                   " about to deal the killing blow"
+                   " to Bill. The other, you swiftly"
+                   " hold at blade point, to bring her"
+                   " in to the House of Questions."
+                   " Maybe Bob will be brought to justice"
+                   " after all. Bill thanks you profusely"
+                   " and lets you know that you will never"
+                   " need to pay for his smithing purposes"
+                   " again. Maybe there's a promotion in"
+                   " your near future too.")
+    else:
+        print("He dead") 
 
 def game_over_fail():
     print("womp womp")
