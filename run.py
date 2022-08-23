@@ -37,13 +37,15 @@ def intro():
                " points for the team of the players' choice is"
                " needed to win the game. Good luck!")
     while True:           
-        proceed = input("Enter 'Go' to proceed.").lower()
+        proceed = input("Enter 'go' to proceed.").lower()
         try:
             if proceed == "go":
                 main()
                 break
             else:
-                raise 
+                raise NameError("Please type 'go' to proceed.")
+        except NameError as e:
+            print(f"Invalid input. {e}.")
             
 
 def main():
