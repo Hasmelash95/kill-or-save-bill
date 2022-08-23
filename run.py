@@ -40,7 +40,7 @@ def intro():
           " points for the team of the players' choice is"
           " needed to win the game. Good luck!")
     while True:           
-        proceed = input("Enter 'go' to proceed.").lower()
+        proceed = input("Enter 'go' to proceed.\n").lower()
         try:
             if proceed == "go":
                 main()
@@ -222,7 +222,9 @@ def good_guy_final():
                        " away. You find yourself with multiple stab"
                        " wounds in the back. It seems you will be"
                        " joining Bill.")
+            # Instant fail code
             score["smiling_shadows"] += 1  
+            score["iron_guard"] -= 1
             game_over_fail()
             break
         elif confront == "b":
