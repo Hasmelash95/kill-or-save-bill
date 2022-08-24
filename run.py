@@ -63,12 +63,15 @@ def main():
         if user_input == "a":
             get_username()
             break
-        elif user_input == "b" or "exit":
+        elif user_input == "b":
             print("Hope to see you again soon!")
             intro()
             break
+        elif user_input == "exit":
+            intro()
+            break
         else:
-            print("Please choose A or B")                
+            print("Please choose A or B")               
 
 def get_username():
     """
@@ -149,6 +152,7 @@ def good_guy():
             break
         elif investigation_style == "b":
             dice_roll_1()
+            good_guy_increment_score()
             good_guy_two()
             break
         elif investigation_style == "exit":   
@@ -166,17 +170,21 @@ def dice_roll_1():
     If player and computer rolls are tied, then the player wins 
     the round. 
     """
+    global player_roll
+    global comp_roll
     player_roll = randint(1, 10)
     comp_roll = randint(1, 10)
     print(f"You rolled {player_roll} against {comp_roll}!")
-    
+
+
+def good_guy_increment_score():
     if player_roll > comp_roll: 
         score["iron_guard"] += 1 
     elif player_roll == comp_roll:
         dice_roll_1()   
     else: 
         score["smiling_shadows"] += 1              
-    print(score)
+
 
 def good_guy_two():
     """
@@ -252,18 +260,22 @@ def good_guy_final():
             print("Please choose A or B")
 
 def bad_guy():
-    assassin_style = input("How do you find your target?\n"
-                           " Choose A or B:\n"
-                           " A: Charm his friends\n"
-                           " B: Stalk his movements\n").lower()
-    if assassin_style == "a":
-        slow_print(f"Charmy charm")
-    elif assassin_style == "b":
-        slow_print(f"attacckkk")
-    elif assassin_style == "exit":
-        intro()
-    else:
-        print("Please choose A or B") 
+    while True:
+        assassin_style = input("How do you find your target?\n"
+                               " Choose A or B:\n"
+                               " A: Charm his friends\n"
+                               " B: Stalk his movements\n").lower()
+        if assassin_style == "a":
+            score["smiling_shadows"] += 1 
+            slow_print("Well done. It's better if your prey isn't"
+                       " on guard.")       
+            bad_guy_two()
+        elif assassin_style == "b":
+            dice_roll_1()
+        elif assassin_style == "exit":
+            intro()
+        else:
+            print("Please choose A or B") 
 
 def good_guy_final_score():
     """
@@ -272,7 +284,7 @@ def good_guy_final_score():
     or fails.
     """
     if score["iron_guard"] >= 2:
-        slow_print("You succeed in striking and"
+        slow_print("\nYou succeed in striking and"
                    " killing the assassin who is"
                    " about to deal the killing blow"
                    " to Bill. The other, you swiftly"
@@ -284,6 +296,7 @@ def good_guy_final_score():
                    " need to pay for his smithing purposes"
                    " again. Maybe there's a promotion in"
                    " your near future too.")
+        game_over_succeed()
     else:
         slow_print("You try to attack the assassin who"
                    " about to deal the killing blow to"
@@ -314,8 +327,11 @@ def start_again():
                 score[team] = 0
             choose_org()
             break
-        elif start_again == "b" or "exit":
+        elif start_again == "b":
             print("Hope to see you again soon!")
+            intro()
+            break
+        elif start_again == "exit":
             intro()
             break
         else:
