@@ -264,7 +264,8 @@ def good_guy_two():
 
 def good_guy_final():
     """
-    Function that defines the final pair of selections.
+    Function that defines the final pair of selections 
+    for the Iron Guard game.
     One will lead to a dice roll while the other will be
     an instant fail that will deduct one point from the
     Iron Guard and add a point to the Smiling Shadows.
@@ -329,6 +330,13 @@ def bad_guy():
             print("Please choose A or B") 
 
 def bad_guy_two():
+    """
+    Function for second selection of options, for the 
+    Smiling Shadows game one will lead to a dice roll while 
+    the other will be an instant fail that gives the
+    Iron Guard an additional two points and ends
+    the game.
+    """
     slow_print("You find out that Bill likes to wander around"
                " Nightingale Park in the evenings.")
     while True:
@@ -357,6 +365,15 @@ def bad_guy_two():
             break          
         else:
             print("Please choose A or B") 
+
+def bad_guy_final():
+    """
+    Function that defines the final pair of selections
+    for the Smiling Shadows game.
+    One will lead to a dice roll while the other will be
+    an instant fail that will deduct one point from the
+    Smiling Shadows and add a point to the Iron Guard.
+    """
 
 def good_guy_final_score():
     """
