@@ -33,7 +33,6 @@ def intro():
     """
     for team, value in score.items():
         score[team] = 0
-    print(score)
     print("Welcome to this choose your own adventure"
           " game set in the city of Arx - based on\nthe"
           " text-based RPG Arx - After the Reckoning."
@@ -64,7 +63,7 @@ def main():
     """
     while True:
         user_input = input("Would you like to start the game?\n" 
-                           " Choose A or B:\n"
+                           "Choose A or B:\n"
                            " A: Yes\n"
                            " B: No\n"
                            " You can exit anytime by typing 'exit'\n").lower()
@@ -94,21 +93,19 @@ def get_username():
     while True:
         username = input("What's your name?\n"
                          "Choose a name with 1-8 chars:\n"
-                         "Only a-z characters\n").lower()
+                         "(Only a-z characters)\n")
         try: 
-            if username.isalpha():
-                choose_org()
-            else:
-                raise ValueError("Username must only contain"
-                                 " letters a-z")
-            if username == "exit":
-                intro()               
-            elif len(username) >= 1 and len(username) <= 8:
-                choose_org()  
-                break
-            else:
+            if username == "exit" or username == "Exit":
+                intro()
+            elif len(username) < 1 or len(username) > 8:
                 raise ValueError("Username must be 1-8 chars long"
                                  f" {username} is {len(username)} chars")
+            elif username.isalpha() == False:
+                raise ValueError("Username must only contain"
+                                 " letters a-z")      
+            else:
+                choose_org()
+                break                       
         except ValueError as e:
             print(f"Invalid input: {e}. Please try again. \n")       
 
@@ -118,9 +115,10 @@ def choose_org():
     Function to define the two game choices (whether user wishes to be a
     good guy - the Iron Guard -  or a bad guy - the Smiling Shadows.)
     """
+    print(score)
     while True:
         org = input("Are you an Iron Guard or a Smiling Shadow?\n"
-                    " Choose A or B:\n"
+                    "Choose A or B:\n"
                     " A: Iron Guard\n"
                     " B: Smiling Shadow\n").lower()
         if org == "a":
@@ -134,13 +132,13 @@ def choose_org():
             break
         elif org == "b":
             slow_print(f"Hello {username}, the boss has a job for you"
-                       " and it pays verrryyy well. Brace yourself."
+                       " and it pays verrryyy well.\nBrace yourself."
                        " Apparently someone really has it in for Bill,"
-                       " the Blacksmith. Someone wealthy. We don't"
+                       " the Blacksmith.\nSomeone wealthy. We don't"
                        " ask questions beyond that as you well know."
-                       " Today is your lucky day. Take this job and the"
-                       " money is all yours. Minus a cut taken by yours"
-                       " truly.")    
+                       " Today\nis your lucky day. Take this job and the"
+                       " money is all yours. Minus a cut taken\nby yours"
+                       " truly.\n")    
             bad_guy()
             break
         elif org == "exit":
@@ -159,14 +157,14 @@ def good_guy():
     """
     while True:
         investigation_style = input("Do you gently question the commoners"
-                                    " in the Lower Boroughs?"
-                                    " Choose A or B:\n"
+                                    " in the Lower Boroughs?\n"
+                                    "Choose A or B:\n"
                                     " A: Of course!\n"
                                     " B: No, I rough them up a bit.\n").lower()
         if investigation_style == "a":
             score["iron_guard"] += 1 
             print(score)
-            slow_print("You catch more flies with honey than with vinegar.")       
+            slow_print("You catch more flies with honey than with vinegar.\n")       
             good_guy_two()
             break
         elif investigation_style == "b":
@@ -240,20 +238,20 @@ def good_guy_two():
     the game.
     """
     slow_print("You find out that the an ambush is being plotted"
-               " for poor Bill in Nightingale Park. The assassins"
-               " were hired by his romantic rival, Bob.")
+               " for poor Bill in Nightingale\nPark. The assassins"
+               " were hired by his romantic rival, Bob.\n")
     while True:
         chase_shadows = input("What do you do?\n"
-                              " Choose A or B:\n"
+                              "Choose A or B:\n"
                               " A: Find Bob and bring him to justice\n"
                               " B: Get to Nightingale Park!\n").lower()
         if chase_shadows == "a":
             slow_print("You find Bob in his house and bring"
-                       " him in to the House of Questions."
-                       " Unfortunately, you hear that Bill has"
-                       " been found stabbed in the Park, declared"
-                       " dead on site. With insufficient evidence,"
-                       " the wealthy merchant, Bob, is released.")  
+                       " him in to the House of Questions.\n"
+                       "Unfortunately, you hear that Bill has"
+                       " been found stabbed in the Park, declared\n"
+                       "dead on site. With insufficient evidence,"
+                       " the wealthy merchant, Bob, is\nreleased.")  
             # Instant fail code
             score["smiling_shadows"] += 2                  
             game_over_fail()
@@ -280,7 +278,7 @@ def good_guy_final():
     """
     while True:
         confront = input("You get to the Nightingale Park, what do you do?\n"
-                         " Choose A or B:\n"
+                         "Choose A or B:\n"
                          " A: Charge at the assassins"
                          " as soon as you enter\n"
                          " B: Create a noise distraction"
@@ -288,10 +286,10 @@ def good_guy_final():
                          " while their heads are turned\n").lower()
         if confront == "a":
             slow_print("You immediately charge at the assassins but"
-                       " they are professionals and simply slide"
+                       " they are professionals and simply\nslide"
                        " away. You find yourself with multiple stab"
-                       " wounds in the back. It seems you will be"
-                       " joining Bill.")
+                       " wounds in the back. It\nseems you will be"
+                       " joining Bill.\n")
             # Instant fail code
             score["smiling_shadows"] += 1  
             score["iron_guard"] -= 1
@@ -319,7 +317,7 @@ def bad_guy():
     """
     while True:
         assassin_style = input("How do you find your target?\n"
-                               " Choose A or B:\n"
+                               "Choose A or B:\n"
                                " A: Charm his friends\n"
                                " B: Stalk his movements\n").lower()
         if assassin_style == "a":
@@ -360,12 +358,12 @@ def bad_guy_two():
             bad_guy_final()
             break
         elif timing == "b":
-            slow_print("You may have wanted to do a reconnaissance."
-                       " An Iron Guard man catches you in your"
+            slow_print("You may have wanted to do some reconnaissance."
+                       " An Iron Guard man catches you\nin your"
                        " attempt and you are brought to the House"
-                       " of Questions. Never to be let free till"
-                       " you admit who hired you. The boss may not"
-                       " let you live through this failure.")
+                       " of Questions. Not to be\nlet free until you"
+                       " talk about your employer. The boss may not"
+                       " let you live\nthrough this failure.")
             # Instant fail code
             score["iron_guard"] += 2                  
             game_over_fail()
@@ -392,7 +390,7 @@ def bad_guy_final():
                        " dagger"
                        " B: Blend in to the surroundings,"
                        " behaving like any other passerby"
-                       " before attacking once close enough").lower()
+                       " before attacking once close enough\n").lower()
         if ambush == "a":
             slow_print("You leap out of the bushes and Bill,"
                        " startled by your presence screams"
@@ -478,13 +476,13 @@ def bad_guy_final_score():
 
 
 def game_over_succeed():
-    slow_print("Congratulations, you have succeeded in your" 
-               " mission!")
+    slow_print(f"Congratulations, {username}! You have succeeded" 
+               " in your mission!")
     start_again()
 
 
 def game_over_fail():
-    slow_print("You have failed your mission.")
+    slow_print(f"Oh no, {username}, you have failed your mission.")
     start_again()
 
 
