@@ -399,7 +399,8 @@ def bad_guy_final():
                        " like a maniac and flees, calling out"
                        " for help in the meanwhile. You don't"
                        " dare follow after him. This did not"
-                       " go as you had hoped.")
+                       " go as you had hoped. The boss may"
+                       " but in your favor.")
             # Instant fail code
             score["iron_guard"] += 1  
             score["smiling_shadows"] -= 1
@@ -464,6 +465,16 @@ def bad_guy_final_score():
                    " payday. There may even be a promotion"
                    " in your near future.")
         game_over_succeed()
+    else:
+        slow_print("You walk past Bill nochalantly and"
+                   " and attempt a mortal blow. Alas, you"
+                   " are only able to nick him a little"
+                   " which gives him the time to struggle"
+                   " from your grip and call for help."
+                   " It seems you've missed your chance."
+                   " This will not go over well at the"
+                   " guildhall.")
+        game_over_fail()           
 
 
 def game_over_succeed():
