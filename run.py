@@ -63,11 +63,8 @@ def main():
         if user_input == "a":
             get_username()
             break
-        elif user_input == "b":
+        elif user_input == "b" or "exit":
             print("Hope to see you again soon!")
-            intro()
-            break
-        elif user_input == "exit":
             intro()
             break
         else:
@@ -305,9 +302,17 @@ def game_over_fail():
                             " A: Yes\n"
                             " B: No\n").lower()
         if start_again == "a":
-            main()
+            for team, value in score.items():
+                score[team] = 0
+            choose_org()
             break
-    
+        elif start_again == "b" or "exit":
+            print(("Hope to see you again soon!"))
+            intro()
+            break
+        else:
+            print("Please choose A or B")
+         
     print(score)
 
 intro()
