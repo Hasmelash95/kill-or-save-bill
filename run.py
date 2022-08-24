@@ -296,7 +296,9 @@ def good_guy_final_score():
         game_over_fail()
 
 def game_over_succeed():
-    
+    slow_print("Congratulations, you have succeeded in your" 
+               " mission!")
+    start_again()
 
 def game_over_fail():
     slow_print("You have failed your mission.")
