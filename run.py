@@ -363,7 +363,7 @@ def bad_guy_two():
                        " attempt and you are brought to the House"
                        " of Questions. Not to be\nlet free until you"
                        " talk about your employer. The boss may not"
-                       " let you live\nthrough this failure.")
+                       " let you live\nthrough this failure.\n")
             # Instant fail code
             score["iron_guard"] += 2                  
             game_over_fail()
@@ -393,12 +393,12 @@ def bad_guy_final():
                        " before attacking once close enough\n").lower()
         if ambush == "a":
             slow_print("You leap out of the bushes and Bill,"
-                       " startled by your presence screams"
+                       " startled by your presence\nscreams"
                        " like a maniac and flees, calling out"
-                       " for help in the meanwhile. You don't"
+                       " for help in the meanwhile.\nYou don't"
                        " dare follow after him. This did not"
-                       " go as you had hoped. The boss may"
-                       " but in your favor.")
+                       " go as you had\nhoped. The boss may"
+                       " laugh but not in your favor.\n")
             # Instant fail code
             score["iron_guard"] += 1  
             score["smiling_shadows"] -= 1
@@ -424,28 +424,28 @@ def good_guy_final_score():
     or fails.
     """
     if score["iron_guard"] >= 2:
-        slow_print("\nYou succeed in striking and"
+        slow_print("You succeed in striking and"
                    " killing the assassin who is"
-                   " about to deal the killing blow"
+                   " about to deal the\nkilling blow"
                    " to Bill. The other, you swiftly"
-                   " hold at blade point, to bring her"
-                   " in to the House of Questions."
+                   " hold at blade point, to bring her\n"
+                   "in to the House of Questions."
                    " Maybe Bob will be brought to justice"
-                   " after all. Bill thanks you profusely"
+                   " after all.\nBill thanks you profusely"
                    " and lets you know that you will never"
-                   " need to pay for his smithing services"
+                   " need to pay for\nhis smithing services"
                    " again. Maybe there's a promotion in"
-                   " your near future too.")
+                   " your near future\ntoo.")
         game_over_succeed()
     else:
         slow_print("You try to attack the assassin who is"
                    " about to deal the killing blow to"
-                   " Bill. However, you miss and stab"
+                   " Bill. However,/nyou miss and stab"
                    " other instead. He falls to the ground"
-                   " lifelessly but so too does Bill. You"
+                   " lifelessly but so\ntoo does Bill. You"
                    " were not fast enough. The killer runs"
-                   " off while you stare at Bill's still"
-                   " body in shock.") 
+                   " off while you stare at\nBill's still"
+                   " body in shock.\n") 
         game_over_fail()
 
 
@@ -457,21 +457,21 @@ def bad_guy_final_score():
     """
     if score["smiling_shadows"] >= 2:
         slow_print("You walk past Bill nochalantly and"
-                   " stab him until he fals to ground,"
-                   " lifeless. No one is around, so you"
+                   " stab him until he falls to ground,"
+                   " lifeless.\nNo one is around, so you"
                    " make your swift exit. A glorious"
-                   " payday. There may even be a promotion"
-                   " in your near future.")
+                   " payday. There may even\nbe a promotion"
+                   " in your near future.\n")
         game_over_succeed()
     else:
         slow_print("You walk past Bill nochalantly and"
                    " and attempt a mortal blow. Alas, you"
-                   " are only able to nick him a little"
+                   " are\nonly able to nick him a little"
                    " which gives him the time to struggle"
-                   " from your grip and call for help."
+                   " from your\ngrip and call for help."
                    " It seems you've missed your chance."
-                   " This will not go over well at the"
-                   " guildhall.")
+                   " This will not\ngo over well at the"
+                   " guildhall.\n")
         game_over_fail()           
 
 
