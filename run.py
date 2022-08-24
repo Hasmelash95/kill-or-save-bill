@@ -23,7 +23,7 @@ def slow_print(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.02)
 
 
 def intro():
@@ -45,7 +45,7 @@ def intro():
           " points\nfor the team of the players' choice is"
           " needed to win the game. Good luck!\n")
     while True:          
-        proceed = input("Enter 'go' to proceed.\n").lower()
+        proceed = input("Enter 'go' to proceed.\n").lower().strip()
         try:
             if proceed == "go":
                 main()
@@ -66,7 +66,7 @@ def main():
                            "Choose A or B:\n"
                            " A: Yes\n"
                            " B: No\n"
-                           " You can exit anytime by typing 'exit'\n").lower()
+                           " You can exit anytime by typing 'exit'\n").lower().strip()
         if user_input == "a":
             get_username()
             break
@@ -120,7 +120,7 @@ def choose_org():
         org = input("Are you an Iron Guard or a Smiling Shadow?\n"
                     "Choose A or B:\n"
                     " A: Iron Guard\n"
-                    " B: Smiling Shadow\n").lower()
+                    " B: Smiling Shadow\n").lower().strip()
         if org == "a":
             slow_print(f"Hello {username}, the citizens of Arx once" 
                        " again need you to keep them safe.\nThere are"
@@ -160,7 +160,7 @@ def good_guy():
                                     " in the Lower Boroughs?\n"
                                     "Choose A or B:\n"
                                     " A: Of course!\n"
-                                    " B: No, I rough them up a bit.\n").lower()
+                                    " B: No, I rough them up a bit.\n").lower().strip()
         if investigation_style == "a":
             score["iron_guard"] += 1 
             print(score)
@@ -244,7 +244,7 @@ def good_guy_two():
         chase_shadows = input("What do you do?\n"
                               "Choose A or B:\n"
                               " A: Find Bob and bring him to justice\n"
-                              " B: Get to Nightingale Park!\n").lower()
+                              " B: Get to Nightingale Park!\n").lower().strip()
         if chase_shadows == "a":
             slow_print("You find Bob in his house and bring"
                        " him in to the House of Questions.\n"
@@ -320,7 +320,7 @@ def bad_guy():
         assassin_style = input("How do you find your target?\n"
                                "Choose A or B:\n"
                                " A: Charm his friends\n"
-                               " B: Stalk his movements\n").lower()
+                               " B: Stalk his movements\n").lower().strip()
         if assassin_style == "a":
             score["smiling_shadows"] += 1 
             print(score)
@@ -353,7 +353,7 @@ def bad_guy_two():
         timing = input("Do you ambush him the first chance you get"
                        " or map out the area for onlookers?\n"
                        " A: Map out the area\n"
-                       " B: Ambush ASAP\n").lower()
+                       " B: Ambush ASAP\n").lower().strip()
         if timing == "a":
             dice_roll()
             bad_guy_increment_score()
@@ -393,7 +393,7 @@ def bad_guy_final():
                        " dagger"
                        " B: Blend in to the surroundings,"
                        " behaving like any other passerby"
-                       " before attacking once close enough\n").lower()
+                       " before attacking once close enough\n").lower().strip()
         if ambush == "a":
             slow_print("You leap out of the bushes and Bill,"
                        " startled by your presence\nscreams"
