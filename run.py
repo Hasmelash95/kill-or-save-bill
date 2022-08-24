@@ -138,6 +138,7 @@ def good_guy():
     Part one of the good guy game (Iron Guard), player can choose 
     one option which will give them an automatic score increase,
     or the other option which will take them to a dice roll.
+    While loop only breaks when user makes a valid input.
     """
     while True:
         investigation_style = input("Do you gently question the commoners"
@@ -165,11 +166,8 @@ def good_guy():
 
 def dice_roll():
     """
-    Roll a 10 sided dice against the computer. 
-    If the player gets a higher roll, player's team gets a point.
-    If the computer gets a higher roll, the opposing team do.
-    If player and computer rolls are tied, then there will be 
-    reroll. 
+    Rolls a 10 sided dice against the computer and
+    prints the result to user.  
     """
     global player_roll
     global comp_roll
@@ -179,6 +177,14 @@ def dice_roll():
 
 
 def good_guy_increment_score():
+    """
+    Function to increment the score for the good guy game as a 
+    result of dice rolls.
+    If the player gets a higher roll, player's team gets a point.
+    If the computer gets a higher roll, the opposing team do.
+    If player and computer rolls are tied, then there will be 
+    reroll. 
+    """
     if player_roll > comp_roll: 
         score["iron_guard"] += 1 
         print(score)
@@ -189,6 +195,14 @@ def good_guy_increment_score():
         print(score)            
 
 def bad_guy_increment_score():
+    """
+    Function to increment the score for the bad guy game as a 
+    result of dice rolls.
+    If the player gets a higher roll, player's team gets a point.
+    If the computer gets a higher roll, the opposing team do.
+    If player and computer rolls are tied, then there will be 
+    reroll. 
+    """
     if player_roll > comp_roll: 
         score["smiling_shadows"] += 1 
         print(score)
@@ -275,6 +289,12 @@ def good_guy_final():
             print("Please choose A or B")
 
 def bad_guy():
+    """
+    Part one of the good guy game (Smiling Shadows), player can choose 
+    one option which will give them an automatic score increase,
+    or the other option which will take them to a dice roll.
+    While loop only breaks when user makes a valid input.
+    """
     while True:
         assassin_style = input("How do you find your target?\n"
                                " Choose A or B:\n"
