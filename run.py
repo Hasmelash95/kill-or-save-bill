@@ -164,11 +164,11 @@ def good_guy():
 
 def dice_roll_1():
     """
-    Roll a 10 sided dice against the computer for Iron Guard game.
-    If the player gets a higher roll, Iron Guard gets a point.
-    If the computer gets a higher roll, the Smiling Shadows do.
-    If player and computer rolls are tied, then the player wins 
-    the round. 
+    Roll a 10 sided dice against the computer. 
+    If the player gets a higher roll, player's team gets a point.
+    If the computer gets a higher roll, the opposing team do.
+    If player and computer rolls are tied, then there will be 
+    reroll. 
     """
     global player_roll
     global comp_roll
