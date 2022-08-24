@@ -147,6 +147,7 @@ def good_guy():
                                     " B: No, I rough them up a bit.\n").lower()
         if investigation_style == "a":
             score["iron_guard"] += 1 
+            print(score)
             slow_print("You catch more flies with honey than with vinegar.")       
             good_guy_two()
             break
@@ -180,11 +181,22 @@ def dice_roll():
 def good_guy_increment_score():
     if player_roll > comp_roll: 
         score["iron_guard"] += 1 
+        print(score)
     elif player_roll == comp_roll:
-        dice_roll_1()   
+        dice_roll()   
     else: 
-        score["smiling_shadows"] += 1              
+        score["smiling_shadows"] += 1  
+        print(score)            
 
+def bad_guy_increment_score():
+    if player_roll > comp_roll: 
+        score["smiling_shadows"] += 1 
+        print(score)
+    elif player_roll == comp_roll:
+        dice_roll()   
+    else: 
+        score["iron_guard"] += 1  
+        print(score)
 
 def good_guy_two():
     """
@@ -215,6 +227,7 @@ def good_guy_two():
             break              
         elif chase_shadows == "b":
             dice_roll()
+            good_guy_increment_score()
             good_guy_final()
             break
         elif chase_shadows == "exit":   
@@ -247,10 +260,12 @@ def good_guy_final():
             # Instant fail code
             score["smiling_shadows"] += 1  
             score["iron_guard"] -= 1
+            print(score)
             game_over_fail()
             break
         elif confront == "b":
             dice_roll()
+            good_guy_increment_score()
             good_guy_final_score()
             break
         elif confront == "exit":
@@ -270,12 +285,19 @@ def bad_guy():
             slow_print("Well done. It's better if your prey isn't"
                        " on guard.")       
             bad_guy_two()
+            break
         elif assassin_style == "b":
             dice_roll()
+            bad_guy_two()
+            break
         elif assassin_style == "exit":
             intro()
+            break
         else:
             print("Please choose A or B") 
+
+def bad_guy_two():
+    print("bla")
 
 def good_guy_final_score():
     """
