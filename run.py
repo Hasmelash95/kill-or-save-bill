@@ -14,6 +14,7 @@ Dictionary to track the scores
 """
 score = {"iron_guard": 0, "smiling_shadows": 0}
 
+
 def slow_print(text):
     """
     Function to define how the output is printed to the user. 
@@ -23,6 +24,7 @@ def slow_print(text):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(0.07)
+
 
 def intro():
     """
@@ -79,6 +81,7 @@ def main():
         else:
             print("Please choose A or B")               
 
+
 def get_username():
     """
     Function to define what a valid username would be. 
@@ -108,6 +111,7 @@ def get_username():
                                  f" {username} is {len(username)} chars")
         except ValueError as e:
             print(f"Invalid input: {e}. Please try again. \n")       
+
 
 def choose_org():
     """
@@ -144,6 +148,7 @@ def choose_org():
             break
         else:
             print("Please choose A or B")   
+
 
 def good_guy():
     """
@@ -206,6 +211,7 @@ def good_guy_increment_score():
         score["smiling_shadows"] += 1  
         print(score)            
 
+
 def bad_guy_increment_score():
     """
     Function to increment the score for the bad guy game as a 
@@ -223,6 +229,7 @@ def bad_guy_increment_score():
     else: 
         score["iron_guard"] += 1  
         print(score)
+
 
 def good_guy_two():
     """
@@ -261,6 +268,7 @@ def good_guy_two():
             break
         else:
             print("Please choose A or B") 
+
 
 def good_guy_final():
     """
@@ -301,6 +309,7 @@ def good_guy_final():
         else: 
             print("Please choose A or B")
 
+
 def bad_guy():
     """
     Part one of the good guy game (Smiling Shadows), player can choose 
@@ -328,6 +337,7 @@ def bad_guy():
             break
         else:
             print("Please choose A or B") 
+
 
 def bad_guy_two():
     """
@@ -366,6 +376,7 @@ def bad_guy_two():
         else:
             print("Please choose A or B") 
 
+
 def bad_guy_final():
     """
     Function that defines the final pair of selections
@@ -376,12 +387,12 @@ def bad_guy_final():
     """
     while True:
         ambush = input("How do you attack?\n"
-                        " A: Leap out of the bushes and"
-                        " attempt to strike with my"
-                        " dagger"
-                        " B: Blend in to the surroundings,"
-                        " behaving like any other passerby"
-                        " before attacking once close enough").lower()
+                       " A: Leap out of the bushes and"
+                       " attempt to strike with my"
+                       " dagger"
+                       " B: Blend in to the surroundings,"
+                       " behaving like any other passerby"
+                       " before attacking once close enough").lower()
         if ambush == "a":
             slow_print("You leap out of the bushes and Bill,"
                        " startled by your presence screams"
@@ -389,7 +400,7 @@ def bad_guy_final():
                        " for help in the meanwhile. You don't"
                        " dare follow after him. This did not"
                        " go as you had hoped.")
-             # Instant fail code
+            # Instant fail code
             score["iron_guard"] += 1  
             score["smiling_shadows"] -= 1
             print(score)
@@ -405,6 +416,7 @@ def bad_guy_final():
             break
         else:
             print("Please choose A or B")
+
 
 def good_guy_final_score():
     """
@@ -422,14 +434,14 @@ def good_guy_final_score():
                    " Maybe Bob will be brought to justice"
                    " after all. Bill thanks you profusely"
                    " and lets you know that you will never"
-                   " need to pay for his smithing purposes"
+                   " need to pay for his smithing services"
                    " again. Maybe there's a promotion in"
                    " your near future too.")
         game_over_succeed()
     else:
-        slow_print("You try to attack the assassin who"
+        slow_print("You try to attack the assassin who is"
                    " about to deal the killing blow to"
-                   " Bill. However, you miss, and stab"
+                   " Bill. However, you miss and stab"
                    " other instead. He falls to the ground"
                    " lifelessly but so too does Bill. You"
                    " were not fast enough. The killer runs"
@@ -437,14 +449,33 @@ def good_guy_final_score():
                    " body in shock.") 
         game_over_fail()
 
+
+def bad_guy_final_score():
+    """
+    Function to define what would count as a success
+    and the message to display if the player succeeds 
+    or fails.
+    """
+    if score["smiling_shadows"] >= 2:
+        slow_print("You walk past Bill nochalantly and"
+                   " stab him until he fals to ground,"
+                   " lifeless. No one is around, so you"
+                   " make your swift exit. A glorious"
+                   " payday. There may even be a promotion"
+                   " in your near future.")
+        game_over_succeed()
+
+
 def game_over_succeed():
     slow_print("Congratulations, you have succeeded in your" 
                " mission!")
     start_again()
 
+
 def game_over_fail():
     slow_print("You have failed your mission.")
     start_again()
+
 
 def start_again():    
     while True:
@@ -467,5 +498,6 @@ def start_again():
             print("Please choose A or B")
          
     print(score)
+
 
 intro()
