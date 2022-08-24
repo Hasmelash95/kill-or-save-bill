@@ -23,7 +23,7 @@ def slow_print(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.07)
+        time.sleep(0.1)
 
 
 def intro():
@@ -253,7 +253,8 @@ def good_guy_two():
                        "dead on site. With insufficient evidence,"
                        " the wealthy merchant, Bob, is\nreleased.")  
             # Instant fail code
-            score["smiling_shadows"] += 2                  
+            score["smiling_shadows"] += 2    
+            print(score)              
             game_over_fail()
             break              
         elif chase_shadows == "b":
@@ -322,6 +323,7 @@ def bad_guy():
                                " B: Stalk his movements\n").lower()
         if assassin_style == "a":
             score["smiling_shadows"] += 1 
+            print(score)
             slow_print("Well done. It's better if your prey isn't"
                        " on guard.")       
             bad_guy_two()
@@ -365,7 +367,8 @@ def bad_guy_two():
                        " talk about your employer. The boss may not"
                        " let you live\nthrough this failure.\n")
             # Instant fail code
-            score["iron_guard"] += 2                  
+            score["iron_guard"] += 2      
+            print(score)            
             game_over_fail()
             break 
         elif timing == "exit":
