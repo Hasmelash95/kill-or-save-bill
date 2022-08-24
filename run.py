@@ -151,7 +151,7 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "b":
-            dice_roll_1()
+            dice_roll()
             good_guy_increment_score()
             good_guy_two()
             break
@@ -162,7 +162,7 @@ def good_guy():
             print("Please choose A or B") 
 
 
-def dice_roll_1():
+def dice_roll():
     """
     Roll a 10 sided dice against the computer. 
     If the player gets a higher roll, player's team gets a point.
@@ -214,7 +214,7 @@ def good_guy_two():
             game_over_fail()
             break              
         elif chase_shadows == "b":
-            dice_roll_1()
+            dice_roll()
             good_guy_final()
             break
         elif chase_shadows == "exit":   
@@ -250,7 +250,7 @@ def good_guy_final():
             game_over_fail()
             break
         elif confront == "b":
-            dice_roll_1()
+            dice_roll()
             good_guy_final_score()
             break
         elif confront == "exit":
@@ -271,7 +271,7 @@ def bad_guy():
                        " on guard.")       
             bad_guy_two()
         elif assassin_style == "b":
-            dice_roll_1()
+            dice_roll()
         elif assassin_style == "exit":
             intro()
         else:
