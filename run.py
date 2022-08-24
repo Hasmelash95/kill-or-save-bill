@@ -374,6 +374,37 @@ def bad_guy_final():
     an instant fail that will deduct one point from the
     Smiling Shadows and add a point to the Iron Guard.
     """
+    while True:
+        ambush = input("How do you attack?\n"
+                        " A: Leap out of the bushes and"
+                        " attempt to strike with my"
+                        " dagger"
+                        " B: Blend in to the surroundings,"
+                        " behaving like any other passerby"
+                        " before attacking once close enough").lower()
+        if ambush == "a":
+            slow_print("You leap out of the bushes and Bill,"
+                       " startled by your presence screams"
+                       " like a maniac and flees, calling out"
+                       " for help in the meanwhile. You don't"
+                       " dare follow after him. This did not"
+                       " go as you had hoped.")
+             # Instant fail code
+            score["iron_guard"] += 1  
+            score["smiling_shadows"] -= 1
+            print(score)
+            game_over_fail()
+            break
+        elif ambush == "b":
+            dice_roll()
+            bad_guy_increment_score()
+            bad_guy_final_score()
+            break
+        elif ambush == "exit":
+            intro()
+            break
+        else:
+            print("Please choose A or B")
 
 def good_guy_final_score():
     """
