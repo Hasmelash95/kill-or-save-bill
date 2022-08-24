@@ -71,7 +71,7 @@ def main():
             intro()
             break
         else:
-            slow_print("Please choose A or B")                
+            print("Please choose A or B")                
 
 def get_username():
     """
@@ -95,7 +95,7 @@ def get_username():
                 raise ValueError(f"Username must be 1-8 chars long,"
                                  f" {username} is {len(username)} chars")
         except ValueError as e:
-            slow_print(f"Invalid input: {e}. Please try again. \n")       
+            print(f"Invalid input: {e}. Please try again. \n")       
 
 def choose_org():
     """
@@ -131,7 +131,7 @@ def choose_org():
             intro()
             break
         else:
-            slow_print("Please choose A or B")   
+            print("Please choose A or B")   
 
 def good_guy():
     """
@@ -158,7 +158,7 @@ def good_guy():
             intro()
             break
         else:
-            slow_print("Please choose A or B") 
+            print("Please choose A or B") 
 
 
 def dice_roll_1():
@@ -216,7 +216,7 @@ def good_guy_two():
             intro()
             break
         else:
-            slow_print("Please choose A or B") 
+            print("Please choose A or B") 
 
 def good_guy_final():
     """
@@ -252,7 +252,7 @@ def good_guy_final():
             intro()
             break
         else: 
-            slow_print("Please choose A or B")
+            print("Please choose A or B")
 
 def bad_guy():
     assassin_style = input("How do you find your target?\n"
@@ -266,7 +266,7 @@ def bad_guy():
     elif assassin_style == "exit":
         intro()
     else:
-        slow_print("Please choose A or B") 
+        print("Please choose A or B") 
 
 def good_guy_final_score():
     """
@@ -299,7 +299,15 @@ def good_guy_final_score():
         game_over_fail()
 
 def game_over_fail():
-    print("womp womp")
+    slow_print("You have failed your mission.")
+    while True:
+        start_again = input("Would you like to start again?\n"
+                            " A: Yes\n"
+                            " B: No\n").lower()
+        if start_again == "a":
+            main()
+            break
+    
     print(score)
 
 intro()
