@@ -1,4 +1,6 @@
-# Importing modules
+"""
+Importing modules
+"""
 # To use os.clear to clear the terminal
 import os 
 # For slow print
@@ -7,7 +9,9 @@ import time
 # For dice rolls
 from random import randint
 
-# Dictionary to track the scores
+"""
+Dictionary to track the scores
+"""
 score = {"iron_guard": 0, "smiling_shadows": 0}
 
 def slow_print(text):
@@ -46,9 +50,9 @@ def intro():
                 main()
                 break
             else:
-                raise NameError("Please type 'go' to proceed.")
+                raise ValueError("Please type 'go' to proceed.")
         except NameError as e:
-            print(f"Invalid input. {e}.")
+            print(f"Invalid input: {proceed}. {e}.")
             
 
 def main():
@@ -58,8 +62,10 @@ def main():
     """
     while True:
         user_input = input("Would you like to start the game?" 
-                           " Choose A or B:\nA) Yes\nB) No\n"
-                           "You can exit anytime by typing 'exit'\n").lower()
+                           " Choose A or B:\n"
+                           " A: Yes\n"
+                           " B: No\n"
+                           " You can exit anytime by typing 'exit'\n").lower()
         if user_input == "a":
             get_username()
             break
@@ -84,15 +90,21 @@ def get_username():
     global username
     while True:
         username = input("What's your name?"
-                         " Choose a name with 1-8 chars:\n")
+                         " Choose a name with 1-8 chars:\n"
+                         " Only a-z characters\n")
         try: 
+            if username.isalpha():
+                intro()
+            else:
+                raise ValueError("Username must only contain"
+                                 " letters a-z")
             if username == "exit":
                 intro()               
             elif len(username) >= 1 and len(username) <= 8:
                 choose_org()  
                 break
             else:
-                raise ValueError(f"Username must be 1-8 chars long,"
+                raise ValueError("Username must be 1-8 chars long"
                                  f" {username} is {len(username)} chars")
         except ValueError as e:
             print(f"Invalid input: {e}. Please try again. \n")       
