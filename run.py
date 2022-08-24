@@ -51,7 +51,7 @@ def intro():
                 break
             else:
                 raise ValueError("Please type 'go' to proceed.")
-        except NameError as e:
+        except ValueError as e:
             print(f"Invalid input: {proceed}. {e}.")
             
 
@@ -91,7 +91,7 @@ def get_username():
     while True:
         username = input("What's your name?"
                          " Choose a name with 1-8 chars:\n"
-                         " Only a-z characters\n")
+                         " Only a-z characters\n").lower()
         try: 
             if username.isalpha():
                 intro()
@@ -329,7 +329,34 @@ def bad_guy():
             print("Please choose A or B") 
 
 def bad_guy_two():
-    print("bla")
+    slow_print("You find out that Bill likes to wander around"
+               " Nightingale Park in the evenings.")
+    while True:
+        timing = input("Do you ambush him the first chance you get"
+                       " or map out the area for onlookers?\n"
+                       " A: Map out the area\n"
+                       " B: Ambush ASAP\n").lower()
+        if timing == "a":
+            dice_roll()
+            bad_guy_increment_score()
+            bad_guy_final()
+            break
+        elif timing == "b":
+            slow_print("You may have wanted to do a reconnaissance."
+                       " An Iron Guard man catches you in your"
+                       " attempt and you are brought to the House"
+                       " of Questions. Never to be let free till"
+                       " you admit who hired you. The boss may not"
+                       " let you live through this failure.")
+            # Instant fail code
+            score["iron_guard"] += 2                  
+            game_over_fail()
+            break 
+        elif timing == "exit":
+            intro()
+            break          
+        else:
+            print("Please choose A or B") 
 
 def good_guy_final_score():
     """
