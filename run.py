@@ -255,10 +255,10 @@ def good_guy_final():
             slow_print("Please choose A or B")
 
 def bad_guy():
-    assassin_style = input("How do you approach your target?\n"
+    assassin_style = input("How do you find your target?\n"
                            " Choose A or B:\n"
-                           " A: Charm my way in\n"
-                           " B: Stalk and attack\n").lower()
+                           " A: Charm his friends\n"
+                           " B: Stalk his movements\n").lower()
     if assassin_style == "a":
         slow_print(f"Charmy charm")
     elif assassin_style == "b":
@@ -288,7 +288,15 @@ def good_guy_final_score():
                    " again. Maybe there's a promotion in"
                    " your near future too.")
     else:
-        print("He dead") 
+        slow_print("You try to attack the assassin who"
+                   " about to deal the killing blow to"
+                   " Bill. However, you miss, and stab"
+                   " other instead. He falls to the ground"
+                   " lifelessly but so too does Bill. You"
+                   " were not fast enough. The killer runs"
+                   " off while you stare at Bill's still"
+                   " body in shock.") 
+        game_over_fail()
 
 def game_over_fail():
     print("womp womp")
