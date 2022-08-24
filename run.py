@@ -295,8 +295,14 @@ def good_guy_final_score():
                    " body in shock.") 
         game_over_fail()
 
+def game_over_succeed():
+    
+
 def game_over_fail():
     slow_print("You have failed your mission.")
+    start_again()
+
+def start_again():    
     while True:
         start_again = input("Would you like to start again?\n"
                             " A: Yes\n"
@@ -307,7 +313,7 @@ def game_over_fail():
             choose_org()
             break
         elif start_again == "b" or "exit":
-            print(("Hope to see you again soon!"))
+            print("Hope to see you again soon!")
             intro()
             break
         else:
