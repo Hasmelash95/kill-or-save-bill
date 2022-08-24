@@ -35,17 +35,17 @@ def intro():
         score[team] = 0
     print(score)
     print("Welcome to this choose your own adventure"
-          " game set in the city of Arx - based on the"
-          " text-based rpg, Arx - After the Reckoning."
-          " Players can choose to play as members of the"
+          " game set in the city of Arx - based on\nthe"
+          " text-based RPG Arx - After the Reckoning."
+          " Players can choose to play as members\nof the"
           " Ion Guard (the city watch) or the elusive"
-          " group of assassins, the Smiling Shadows."
+          " group of assassins, the Smiling\nShadows."
           " As the game proceeds, players will be provided"
-          " options that they can choose from by enterring"
+          " options that they can\nchoose from by enterring"
           " 'a' or 'b' into the terminal. A total of two"
-          " points for the team of the players' choice is"
-          " needed to win the game. Good luck!")
-    while True:           
+          " points\nfor the team of the players' choice is"
+          " needed to win the game. Good luck!\n")
+    while True:          
         proceed = input("Enter 'go' to proceed.\n").lower()
         try:
             if proceed == "go":
@@ -63,7 +63,7 @@ def main():
     to start the game or not.
     """
     while True:
-        user_input = input("Would you like to start the game?" 
+        user_input = input("Would you like to start the game?\n" 
                            " Choose A or B:\n"
                            " A: Yes\n"
                            " B: No\n"
@@ -92,12 +92,12 @@ def get_username():
     """
     global username
     while True:
-        username = input("What's your name?"
-                         " Choose a name with 1-8 chars:\n"
-                         " Only a-z characters\n").lower()
+        username = input("What's your name?\n"
+                         "Choose a name with 1-8 chars:\n"
+                         "Only a-z characters\n").lower()
         try: 
             if username.isalpha():
-                intro()
+                choose_org()
             else:
                 raise ValueError("Username must only contain"
                                  " letters a-z")
@@ -125,11 +125,11 @@ def choose_org():
                     " B: Smiling Shadow\n").lower()
         if org == "a":
             slow_print(f"Hello {username}, the citizens of Arx once" 
-                       " again need you to keep them safe. There are"
+                       " again need you to keep them safe.\nThere are"
                        " rumors that a hit has been placed on poor"
-                       " Bill, the Blacksmith. The vile assassins of"
+                       " Bill, the Blacksmith.\nThe vile assassins of"
                        " the Smiling Shadows must be stopped before"
-                       " another life is unjustly lost.")
+                       " another life\nis unjustly lost.\n")
             good_guy()
             break
         elif org == "b":
