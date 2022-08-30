@@ -206,9 +206,7 @@ def good_guy_two():
                        " been found stabbed in the Park, declared\n"
                        "dead on site. With insufficient evidence,"
                        " the wealthy merchant, Bob, is\nreleased.")  
-            # Instant fail code
-            score["smiling_shadows"] += 2    
-            print(score)              
+            # Instant fail code      
             game_over_fail()
             break              
         elif chase_shadows == "b":
@@ -238,7 +236,7 @@ def good_guy_final():
                          " as soon as you enter\n"
                          " B: Create a noise distraction"
                          " before aiming for the targets"
-                         " while their heads are turned\n").lower()
+                         " while their heads are turned\n").lower().strip()
         if confront == "a":
             slow_print("You immediately charge at the assassins but"
                        " they are professionals and simply\nslide"
@@ -246,9 +244,6 @@ def good_guy_final():
                        " wounds in the back. It\nseems you will be"
                        " joining Bill.\n")
             # Instant fail code
-            score["smiling_shadows"] += 1  
-            score["iron_guard"] -= 1
-            print(score)
             game_over_fail()
             break
         elif confront == "b":
@@ -321,9 +316,7 @@ def bad_guy_two():
                        " of Questions. Not to be\nlet free until you"
                        " talk about your employer. The boss may not"
                        " let you live\nthrough this failure.\n")
-            # Instant fail code
-            score["iron_guard"] += 2      
-            print(score)            
+            # Instant fail code       
             game_over_fail()
             break 
         elif timing == "exit":
@@ -358,9 +351,6 @@ def bad_guy_final():
                        " go as you had\nhoped. The boss may"
                        " laugh but not in your favor.\n")
             # Instant fail code
-            score["iron_guard"] += 1  
-            score["smiling_shadows"] -= 1
-            print(score)
             game_over_fail()
             break
         elif ambush == "b":
@@ -448,7 +438,7 @@ def start_again():
     while True:
         start_again = input("Would you like to start again?\n"
                             " A: Yes\n"
-                            " B: No\n").lower()
+                            " B: No\n").lower().strip()
         if start_again == "a":
             for team, value in score.items():
                 score[team] = 0
@@ -466,5 +456,5 @@ def start_again():
          
     print(score)
 
-
-main()
+if __name__ == "__main__":
+    main()
