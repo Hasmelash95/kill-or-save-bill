@@ -47,13 +47,13 @@ def main():
     while True:          
         proceed = input("Enter 'go' to proceed.\n"
                         "You can type 'exit' at"
-                        "any time to exit.").lower().strip()
+                        "any time to exit.\n").lower().strip()
         if proceed == "go":
             get_username()
             break
         else:
             print(f"{proceed} is invalid."
-                  "Please type 'go' to proceed.")
+                  "Please type 'go' to proceed.\n")
             
 
 def get_username():
@@ -67,22 +67,21 @@ def get_username():
     global username
     while True:
         username = input("What's your name?\n"
-                         "Choose a name with 1-8 chars:\n"
+                         "Choose a name with 1-8 characters:\n"
                          "(Only a-z characters)\n")
         if username == "exit" or username == "Exit":
-                main()
-        elif len(username) < 1 or len(username) > 8:
-                raise ValueError("Username must be 1-8 chars long"
-                                 f" {username} is {len(username)} chars")
-        elif username.isalpha() == False:
-                raise ValueError("Username must only contain"
-                                 " letters a-z")      
-        else:
+            main()
+        elif len(username) >= 1 and len(username) <= 8:
+            if username.isalpha():
                 choose_org()
-                break                       
-        except ValueError as e:
-            print(f"Invalid input: {e}. Please try again. \n")       
-
+                break
+            else:
+                print("Username must only consist of"
+                      " a-z characters. Please try again.\n")
+        else:
+            print("Username must be 1-8 characters."
+                  f"{username} is {len(username)} characters."
+                  " Please try again.\n")                    
 
 def choose_org():
     """
@@ -116,7 +115,7 @@ def choose_org():
             bad_guy()
             break
         elif org == "exit":
-            intro()
+            main()
             break
         else:
             print("Please choose A or B")   
@@ -147,7 +146,7 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "exit":   
-            intro()
+            main()
             break
         else:
             print("Please choose A or B") 
@@ -237,7 +236,7 @@ def good_guy_two():
             good_guy_final()
             break
         elif chase_shadows == "exit":   
-            intro()
+            main()
             break
         else:
             print("Please choose A or B") 
@@ -277,7 +276,7 @@ def good_guy_final():
             good_guy_final_score()
             break
         elif confront == "exit":
-            intro()
+            main()
             break
         else: 
             print("Please choose A or B")
@@ -307,7 +306,7 @@ def bad_guy():
             bad_guy_two()
             break
         elif assassin_style == "exit":
-            intro()
+            main()
             break
         else:
             print("Please choose A or B") 
@@ -346,7 +345,7 @@ def bad_guy_two():
             game_over_fail()
             break 
         elif timing == "exit":
-            intro()
+            main()
             break          
         else:
             print("Please choose A or B") 
@@ -388,7 +387,7 @@ def bad_guy_final():
             bad_guy_final_score()
             break
         elif ambush == "exit":
-            intro()
+            main()
             break
         else:
             print("Please choose A or B")
@@ -475,10 +474,10 @@ def start_again():
             break
         elif start_again == "b":
             print("Hope to see you again soon!")
-            intro()
+            main()
             break
         elif start_again == "exit":
-            intro()
+            main()
             break
         else:
             print("Please choose A or B")
@@ -486,4 +485,4 @@ def start_again():
     print(score)
 
 
-intro()
+main()
