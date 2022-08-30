@@ -26,7 +26,7 @@ def slow_print(text):
         time.sleep(0.02)
 
 
-def intro():
+def main():
     """
     Function to define the intro text, it will be the starting 
     point whenever a user selects exit
@@ -45,41 +45,16 @@ def intro():
           " points\nfor the team of the players' choice is"
           " needed to win the game. Good luck!\n")
     while True:          
-        proceed = input("Enter 'go' to proceed.\n").lower().strip()
-        try:
-            if proceed == "go":
-                main()
-                break
-            else:
-                raise ValueError("Please type 'go' to proceed.")
-        except ValueError as e:
-            print(f"Invalid input: {proceed}. {e}.")
-            
-
-def main():
-    """
-    Function defining main starting point and the option
-    to start the game or not.
-    """
-    while True:
-        user_input = input("Would you like to start the game?\n" 
-                           "Choose A or B:\n"
-                           " A: Yes\n"
-                           " B: No\n"
-                           " You can exit anytime by typing 'exit'\n").lower().strip()
-        if user_input == "a":
+        proceed = input("Enter 'go' to proceed.\n"
+                        "You can type 'exit' at"
+                        "any time to exit.").lower().strip()
+        if proceed == "go":
             get_username()
             break
-        elif user_input == "b":
-            print("Hope to see you again soon!")
-            intro()
-            break
-        elif user_input == "exit":
-            intro()
-            break
         else:
-            print("Please choose A or B")               
-
+            print(f"{proceed} is invalid."
+                  "Please type 'go' to proceed.")
+            
 
 def get_username():
     """
@@ -94,16 +69,15 @@ def get_username():
         username = input("What's your name?\n"
                          "Choose a name with 1-8 chars:\n"
                          "(Only a-z characters)\n")
-        try: 
-            if username == "exit" or username == "Exit":
-                intro()
-            elif len(username) < 1 or len(username) > 8:
+        if username == "exit" or username == "Exit":
+                main()
+        elif len(username) < 1 or len(username) > 8:
                 raise ValueError("Username must be 1-8 chars long"
                                  f" {username} is {len(username)} chars")
-            elif username.isalpha() == False:
+        elif username.isalpha() == False:
                 raise ValueError("Username must only contain"
                                  " letters a-z")      
-            else:
+        else:
                 choose_org()
                 break                       
         except ValueError as e:
