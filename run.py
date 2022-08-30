@@ -456,5 +456,7 @@ def start_again():
          
     print(score)
 
+# The function will only be called if the file is run from the command line
+# The code will not be executed if the file is imported from another file
 if __name__ == "__main__":
     main()
