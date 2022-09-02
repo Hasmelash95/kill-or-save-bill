@@ -1,6 +1,5 @@
-"""
-Importing modules
-"""
+# Importing modules
+
 # To use os.clear to clear the terminal
 import os 
 # For slow print
@@ -9,9 +8,8 @@ import time
 # For dice rolls
 from random import randint
 
-"""
-Dictionary to track the scores
-"""
+
+# Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
 
 
