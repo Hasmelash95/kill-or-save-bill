@@ -139,7 +139,7 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "b":
-            dice_roll()
+            
             increment_score("iron_guard", "smiling_shadows")
             good_guy_two()
             break
@@ -148,18 +148,6 @@ def good_guy():
             break
         else:
             print("\nPlease choose A or B\n") 
-
-
-def dice_roll():
-    """
-    Rolls a 10 sided dice against the computer and
-    prints the result to user.  
-    """
-    global player_roll
-    global comp_roll
-    player_roll = randint(1, 10)
-    comp_roll = randint(1, 10)
-    print(f"You rolled {player_roll} against {comp_roll}!")
 
 
 def increment_score(pteam, cteam):
@@ -171,15 +159,20 @@ def increment_score(pteam, cteam):
     If player and computer rolls are tied, then there will be 
     reroll. 
     """
-    if player_roll > comp_roll: 
-        score[pteam] += 1 
-        print(score)
-    elif player_roll == comp_roll:
-        dice_roll()   
-    else: 
-        score[cteam] += 1  
-        print(score)            
+    while True:
+        player_roll = randint(1, 10)
+        comp_roll = randint(1, 10)
+        print(f"You rolled {player_roll} against {comp_roll}!")
 
+        if player_roll > comp_roll:
+            score[pteam] +=1
+            print(score)
+            break
+        elif player_roll < comp_roll:
+            score[cteam] +=1
+            print(score)
+            break 
+                    
 
 def good_guy_two():
     """
@@ -208,7 +201,7 @@ def good_guy_two():
             game_over_fail()
             break              
         elif chase_shadows == "b":
-            dice_roll()
+            
             increment_score("iron_guard", "smiling_shadows")
             good_guy_final()
             break
@@ -245,7 +238,7 @@ def good_guy_final():
             game_over_fail()
             break
         elif confront == "b":
-            dice_roll()
+            
             increment_score("iron_guard", "smiling_shadows")
             good_guy_final_score()
             break
@@ -276,7 +269,7 @@ def bad_guy():
             bad_guy_two()
             break
         elif assassin_style == "b":
-            dice_roll()
+            
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_two()
             break
@@ -303,7 +296,7 @@ def bad_guy_two():
                        " A: Map out the area\n"
                        " B: Ambush ASAP\n").lower().strip()
         if timing == "a":
-            dice_roll()
+            
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_final()
             break
@@ -352,7 +345,7 @@ def bad_guy_final():
             game_over_fail()
             break
         elif ambush == "b":
-            dice_roll()
+            
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_final_score()
             break
