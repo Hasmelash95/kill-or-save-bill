@@ -46,12 +46,12 @@ def main():
         proceed = input("\nEnter 'go' to proceed.\n"
                         "You can type 'exit' at"
                         " any time to exit.\n").lower().strip()
-        if proceed == "go":
+        if proceed != "go":
+            print(f"{proceed} is invalid."
+                  " Please type 'go' to proceed.\n")
+        else:
             get_username()
             break
-        else:
-            print(f"{proceed} is invalid."
-                  "Please type 'go' to proceed.\n")
             
 
 def get_username():
@@ -62,7 +62,6 @@ def get_username():
     User must either enter a username between 1-8 chars.
     Typing 'exit' will take the user to intro section.
     """
-    print(score)
     global username
     while True:
         username = input("\nWhat's your name?\n"
@@ -70,23 +69,24 @@ def get_username():
                          "(Only a-z characters)\n")
         if username == "exit" or username == "Exit":
             main()
-        elif len(username) >= 1 and len(username) <= 8:
-            if username.isalpha():
-                choose_org()
-                break
-            else:
-                print("\nUsername must only consist of"
-                      " a-z characters. Please try again.\n")
-        else:
+            break
+        if len(username) > 8:
             print("\nUsername must be 1-8 characters."
-                  f"{username} is {len(username)} characters."
-                  " Please try again.\n")                    
+                  f" {username} is {len(username)} characters."
+                  " Please try again.\n")  
+            if username.isalpha() != True:
+                print("\nUsername must only consist of"
+                          " a-z characters. Please try again.\n")
+        else:
+            choose_org()
+            break                  
 
 def choose_org():
     """
     Function to define the two game choices (whether user wishes to be a
     good guy - the Iron Guard -  or a bad guy - the Smiling Shadows.)
     """
+    print(score)
     while True:
         org = input("\nAre you an Iron Guard or a Smiling Shadow?\n"
                     "Choose A or B:\n"
