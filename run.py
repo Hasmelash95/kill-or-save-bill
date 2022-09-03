@@ -112,11 +112,8 @@ def choose_org():
                        " betters.\n")    
             bad_guy()
             break
-        elif org == "exit":
-            main()
-            break
         else:
-            print("\nPlease choose A or B\n")   
+            input_validation(org)
 
 
 def good_guy():
@@ -139,15 +136,11 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "b":
-            
             increment_score("iron_guard", "smiling_shadows")
             good_guy_two()
             break
-        elif investigation_style == "exit":   
-            main()
-            break
         else:
-            print("\nPlease choose A or B\n") 
+            input_validation(investigation_style)
 
 
 def increment_score(pteam, cteam):
@@ -196,20 +189,16 @@ def good_guy_two():
                        "Unfortunately, you hear that Bill has"
                        " been found stabbed in the Park, declared\n"
                        "dead on site. With insufficient evidence,"
-                       " the wealthy merchant, Bob, is\nreleased.")  
+                       " the wealthy merchant, Bob, is\nreleased.\n")  
             # Instant fail code      
             game_over_fail()
             break              
-        elif chase_shadows == "b":
-            
+        elif chase_shadows == "b":  
             increment_score("iron_guard", "smiling_shadows")
             good_guy_final()
             break
-        elif chase_shadows == "exit":   
-            main()
-            break
         else:
-            print("\nPlease choose A or B\n") 
+            input_validation(chase_shadows)
 
 
 def good_guy_final():
@@ -226,8 +215,7 @@ def good_guy_final():
                          " A: Charge at the assassins"
                          " as soon as you enter\n"
                          " B: Create a noise distraction"
-                         " before aiming for the targets"
-                         " while their heads are turned\n").lower().strip()
+                         " before aiming for the targets.\n").lower().strip()
         if confront == "a":
             slow_print("\nYou immediately charge at the assassins but"
                        " they are professionals and simply\nslide"
@@ -237,16 +225,12 @@ def good_guy_final():
             # Instant fail code
             game_over_fail()
             break
-        elif confront == "b":
-            
+        elif confront == "b": 
             increment_score("iron_guard", "smiling_shadows")
             good_guy_final_score()
             break
-        elif confront == "exit":
-            main()
-            break
         else: 
-            print("\nPlease choose A or B\n")
+            input_validation(confront)
 
 
 def bad_guy():
@@ -268,16 +252,12 @@ def bad_guy():
                        " on guard.\n")       
             bad_guy_two()
             break
-        elif assassin_style == "b":
-            
+        elif assassin_style == "b":   
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_two()
             break
-        elif assassin_style == "exit":
-            main()
-            break
         else:
-            print("\nPlease choose A or B\n") 
+            input_validation(assassin_style)
 
 
 def bad_guy_two():
@@ -296,7 +276,6 @@ def bad_guy_two():
                        " A: Map out the area\n"
                        " B: Ambush ASAP\n").lower().strip()
         if timing == "a":
-            
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_final()
             break
@@ -310,11 +289,8 @@ def bad_guy_two():
             # Instant fail code       
             game_over_fail()
             break 
-        elif timing == "exit":
-            main()
-            break          
         else:
-            print("\nPlease choose A or B\n") 
+            input_validation(timing)
 
 
 def bad_guy_final():
@@ -329,9 +305,9 @@ def bad_guy_final():
         ambush = input("\nHow do you attack?\n"
                        " A: Leap out of the bushes and"
                        " attempt to strike with my"
-                       " dagger"
+                       " dagger\n"
                        " B: Blend in to the surroundings,"
-                       " behaving like any other passerby"
+                       " behaving like any\nother passerby"
                        " before attacking once close enough\n").lower().strip()
         if ambush == "a":
             slow_print("\nYou leap out of the bushes and Bill,"
@@ -344,16 +320,12 @@ def bad_guy_final():
             # Instant fail code
             game_over_fail()
             break
-        elif ambush == "b":
-            
+        elif ambush == "b":  
             increment_score("smiling_shadows", "iron_guard")
             bad_guy_final_score()
             break
-        elif ambush == "exit":
-            main()
-            break
         else:
-            print("\nPlease choose A or B\n")
+            input_validation(ambush)
 
 
 def good_guy_final_score():
@@ -374,7 +346,7 @@ def good_guy_final_score():
                    " and lets you know that you will never"
                    " need to pay for\nhis smithing services"
                    " again. Maybe there's a promotion in"
-                   " your near future\ntoo.")
+                   " your near future\ntoo.\n")
         game_over_succeed()
     else:
         slow_print("\nYou try to attack the assassin who is"
@@ -436,16 +408,21 @@ def start_again():
             choose_org()
             break
         elif start_again == "b":
-            print("\nHope to see you again soon!\n")
+            slow_print("\nHope to see you again soon!\n")
             main()
             break
-        elif start_again == "exit":
+        else:
+            input_validation(start_again)
+    
+def input_validation(variable):
+    while True:
+        if variable == "exit":
             main()
             break
         else:
             print("\nPlease choose A or B\n")
-         
-    print(score)
+            return False
+
 
 # The function will only be called if the file is run from the command line
 # The code will not be executed if the file is imported from another file
