@@ -23,12 +23,20 @@ def slow_print(text):
         sys.stdout.flush()
         time.sleep(0.02)
 
+def clear_terminal():
+    """
+    Function to clear the terminal when it's called.
+    Code credit to Stack Overflow.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def main():
     """
     Function to define the intro text, it will be the starting 
     point whenever a user selects exit
     """
+    ('cls' if os.name == 'nt' else 'clear')
     for team, value in score.items():
         score[team] = 0
     print("\nWelcome to this choose your own adventure"
@@ -42,17 +50,15 @@ def main():
           " 'a' or 'b' into the terminal. A total of two"
           " points\nfor the team of the your choice is"
           " needed to win the game. Good luck!\n")
+    print(score)
     while True:          
-        proceed = input("\nEnter 'go' to proceed.\n"
-                        "You can type 'exit' at"
-                        " any time to exit.\n").lower().strip()
+        proceed = input("\nEnter 'go' to proceed.\n").lower().strip()
         if proceed != "go":
             print(f"{proceed} is invalid."
                   " Please type 'go' to proceed.\n")
         else:
             get_username()
-            break
-            
+            break   
 
 def get_username():
     """
@@ -66,7 +72,9 @@ def get_username():
     while True:
         username = input("\nWhat's your name?\n"
                          "Choose a name with 1-8 characters:\n"
-                         "(Only a-z characters)\n")
+                         "(Only a-z characters)\n"
+                         "You can type 'exit' at"
+                         " any time to exit.")
         if username == "exit" or username == "Exit":
             main()
             break
@@ -86,7 +94,6 @@ def choose_org():
     Function to define the two game choices (whether user wishes to be a
     good guy - the Iron Guard -  or a bad guy - the Smiling Shadows.)
     """
-    print(score)
     while True:
         org = input("\nAre you an Iron Guard or a Smiling Shadow?\n"
                     "Choose A or B:\n"
@@ -415,13 +422,10 @@ def start_again():
             input_validation(start_again)
     
 def input_validation(variable):
-    while True:
-        if variable == "exit":
-            main()
-            break
-        else:
-            print("\nPlease choose A or B\n")
-            return False
+    if variable == "exit":
+        main()
+    else:
+        print("\nPlease choose A or B\n")
 
 
 # The function will only be called if the file is run from the command line
