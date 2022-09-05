@@ -8,6 +8,7 @@ import time
 # For dice rolls
 from random import randint
 
+username = None
 
 # Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
@@ -22,6 +23,7 @@ def slow_print(text):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(0.02)
+
 
 def clear_terminal():
     """
@@ -42,6 +44,7 @@ def main():
     an invalid data alert.
 
     """
+    clear_terminal()
     for team, value in score.items():
         score[team] = 0
     print("\nWelcome to this choose your own adventure"
@@ -65,6 +68,7 @@ def main():
             get_username()
             break   
 
+
 def get_username():
     """
     Function to define what a valid username would be. 
@@ -74,7 +78,6 @@ def get_username():
     and ask the user to try again.
     Typing 'exit' will take the user to intro section.
     """
-    global username
     while True:
         username = input("\nWhat's your name?\n"
                          "Choose a name with 1-8 characters:\n"
