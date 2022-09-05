@@ -34,9 +34,14 @@ def clear_terminal():
 def main():
     """
     Function to define the intro text, it will be the starting 
-    point whenever a user selects exit
+    point whenever a user enters 'exit'.
+    Sets the score for the dictionary values to 0 when function 
+    is called.
+    Prints the introduction text and prompts the user to type 'go'
+    to proceed with the game. Any input other than 'go' will get
+    an invalid data alert.
+
     """
-    ('cls' if os.name == 'nt' else 'clear')
     for team, value in score.items():
         score[team] = 0
     print("\nWelcome to this choose your own adventure"
@@ -63,9 +68,10 @@ def main():
 def get_username():
     """
     Function to define what a valid username would be. 
-    An error is raised if the conditions listed are 
-    not met.
-    User must either enter a username between 1-8 chars.
+    User must either enter a username between 1-8 chars 
+    and only use a-z characters.
+    If the username is not valid, it will prompt an alert
+    and ask the user to try again.
     Typing 'exit' will take the user to intro section.
     """
     global username
@@ -89,10 +95,14 @@ def get_username():
             choose_org()
             break                  
 
+
 def choose_org():
     """
     Function to define the two game choices (whether user wishes to be a
     good guy - the Iron Guard -  or a bad guy - the Smiling Shadows.)
+    Any input other than those two options will call the input_validation
+    function. 
+    The While loop persists until the user types a valid input.
     """
     while True:
         org = input("\nAre you an Iron Guard or a Smiling Shadow?\n"
@@ -128,7 +138,7 @@ def good_guy():
     Part one of the good guy game (Iron Guard), player can choose 
     one option which will give them an automatic score increase,
     or the other option which will take them to a dice roll.
-    While loop only breaks when user makes a valid input.
+    The While loop persists until the user types a valid input.
     """
     while True:
         investigation_style = input("\nDo you gently question the commoners"
@@ -152,12 +162,13 @@ def good_guy():
 
 def increment_score(pteam, cteam):
     """
-    Function to increment the score for the good guy game as a 
-    result of dice rolls.
+    Function to roll a 10 sided dice for the player and the 
+    computer and compare their rolls.
     If the player gets a higher roll, player's team gets a point.
     If the computer gets a higher roll, the opposing team do.
     If player and computer rolls are tied, then there will be 
-    reroll. 
+    reroll and the While loop continues until the rolls are not 
+    tied.
     """
     while True:
         player_roll = randint(1, 10)
@@ -178,9 +189,7 @@ def good_guy_two():
     """
     Function for second selection of options, for the 
     Iron Guard game one will lead to a dice roll while 
-    the other will be an instant fail that gives the
-    Smiling Shadows an additional two points and ends
-    the game.
+    the other will be an instant fail that ends the game.
     """
     slow_print("\nYou find out that the an ambush is being plotted"
                " for poor Bill in Nightingale\nPark. The assassins"
@@ -213,8 +222,7 @@ def good_guy_final():
     Function that defines the final pair of selections 
     for the Iron Guard game.
     One will lead to a dice roll while the other will be
-    an instant fail that will deduct one point from the
-    Iron Guard and add a point to the Smiling Shadows.
+    an instant fail that ends the game.
     """
     while True:
         confront = input("\nYou get to the Nightingale Park, what do you do?\n"
@@ -245,7 +253,7 @@ def bad_guy():
     Part one of the good guy game (Smiling Shadows), player can choose 
     one option which will give them an automatic score increase,
     or the other option which will take them to a dice roll.
-    While loop only breaks when user makes a valid input.
+    The While loop persists until the user types a valid input.
     """
     while True:
         assassin_style = input("\nHow do you find your target?\n"
@@ -271,9 +279,8 @@ def bad_guy_two():
     """
     Function for second selection of options, for the 
     Smiling Shadows game one will lead to a dice roll while 
-    the other will be an instant fail that gives the
-    Iron Guard an additional two points and ends
-    the game.
+    the other will be an instant fail that ends the game.
+    The While loop persists until the user types a valid input.
     """
     slow_print("\nYou find out that Bill likes to wander around"
                " Nightingale Park in the evenings.\n")
@@ -305,8 +312,8 @@ def bad_guy_final():
     Function that defines the final pair of selections
     for the Smiling Shadows game.
     One will lead to a dice roll while the other will be
-    an instant fail that will deduct one point from the
-    Smiling Shadows and add a point to the Iron Guard.
+    an instant fail that ends the game.
+    The While loop persists until the user types a valid input.
     """
     while True:
         ambush = input("\nHow do you attack?\n"
@@ -339,7 +346,11 @@ def good_guy_final_score():
     """
     Function to define what would count as a success
     and the message to display if the player succeeds 
-    or fails.
+    or fails the Iron Guard game.
+
+    If the player gets a score of 2 or more, then the
+    success outcome will be printed. If not, the failure
+    outcome will be.
     """
     if score["iron_guard"] >= 2:
         slow_print("\nYou succeed in striking and"
@@ -371,7 +382,11 @@ def bad_guy_final_score():
     """
     Function to define what would count as a success
     and the message to display if the player succeeds 
-    or fails.
+    or fails the Shadows game.
+
+    If the player gets a score of 2 or more, then the
+    success outcome will be printed. If not, the failure
+    outcome will be.
     """
     if score["smiling_shadows"] >= 2:
         slow_print("\nYou walk past Bill nochalantly and"
@@ -394,17 +409,31 @@ def bad_guy_final_score():
 
 
 def game_over_succeed():
+    """
+    Function to display the general game success message when called.
+    """
     slow_print(f"\nCongratulations, {username}! You have succeeded" 
                " in your mission!\n")
     start_again()
 
 
 def game_over_fail():
+    """
+    Function to display the general game failure message when called.
+    """
     slow_print(f"\nOh no, {username}, you have failed your mission.\n")
     start_again()
 
 
 def start_again():    
+    """
+    Function that defines the start again options.
+    User can start again without needing to go 
+    through the introduction or input their username
+    by typing 'a' or exit to the main page by typing
+    'b'.
+    The While loop persists until the user types a valid input.
+    """
     while True:
         start_again = input("\nWould you like to start again?\n"
                             " A: Yes\n"
@@ -422,6 +451,13 @@ def start_again():
             input_validation(start_again)
     
 def input_validation(variable):
+    """
+    A function to place the validation message global to a majority 
+    of the game. If a user selects anything other than 'a' or 'b' 
+    during the game, they will be taken here. 
+    If they type anything other than 'exit', the original question
+    will be repeated until they enter a valid input.
+    """
     if variable == "exit":
         main()
     else:
