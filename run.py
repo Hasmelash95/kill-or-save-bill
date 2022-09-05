@@ -78,6 +78,7 @@ def get_username():
     and ask the user to try again.
     Typing 'exit' will take the user to intro section.
     """
+    global username
     while True:
         username = input("\nWhat's your name?\n"
                          "Choose a name with 1-8 characters:\n"
