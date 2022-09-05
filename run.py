@@ -84,15 +84,15 @@ def get_username():
                          "Choose a name with 1-8 characters:\n"
                          "(Only a-z characters)\n"
                          "You can type 'exit' at"
-                         " any time to exit.")
+                         " any time to exit.\n")
         if username == "exit" or username == "Exit":
             main()
             break
-        if len(username) > 8:
+        if len(username) > 8 or len(username) < 1:
             print("\nUsername must be 1-8 characters."
                   f" {username} is {len(username)} characters."
                   " Please try again.\n")  
-            if username.isalpha() != True:
+        elif username.isalpha() != True:
                 print("\nUsername must only consist of"
                           " a-z characters. Please try again.\n")
         else:
