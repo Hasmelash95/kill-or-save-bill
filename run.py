@@ -8,7 +8,7 @@ import time
 # For dice rolls
 from random import randint
 
-username = None
+username = ""
 
 # Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
