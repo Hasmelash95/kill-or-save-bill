@@ -88,14 +88,15 @@ def get_username():
                          "You can type 'exit' at"
                          " any time to exit.\n")
         if username == "exit" or username == "Exit":
+            print("Exiting application...")
             exit()
         if len(username) > 8 or len(username) < 1:
             print("\nUsername must be 1-8 characters."
                   f" {username} is {len(username)} characters."
                   " Please try again.\n")  
-        elif username.isalpha() != True:
-                print("\nUsername must only consist of"
-                          " a-z characters. Please try again.\n")
+        elif username.isalpha() is not True:
+            print("\nUsername must only consist of"
+                  " a-z characters. Please try again.\n")
         else:
             choose_org()
             break                  
@@ -184,11 +185,11 @@ def increment_score(pteam, cteam):
         print(f"You rolled {player_roll} against {comp_roll}!")
 
         if player_roll > comp_roll:
-            score[pteam] +=1
+            score[pteam] += 1
             print(score)
             break
         elif player_roll < comp_roll:
-            score[cteam] +=1
+            score[cteam] += 1
             print(score)
             break 
                     
