@@ -45,8 +45,6 @@ def main():
 
     """
     clear_terminal()
-    for team, value in score.items():
-        score[team] = 0
     print("\nWelcome to this choose your own adventure"
           " game set in the city of Arx - based on\nthe"
           " text-based RPG Arx - After the Reckoning."
@@ -453,6 +451,11 @@ def start_again():
         else:
             input_validation(start_again)
     
+
+def pretty_print():
+    for team, value in score.items():
+        print(f"{team}: {value}")
+
 def input_validation(variable):
     """
     A function to place the validation message global to a majority 
