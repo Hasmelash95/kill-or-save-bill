@@ -154,7 +154,7 @@ def good_guy():
                                     " B: No, I rough them up a bit.\n").lower().strip()
         if investigation_style == "a":
             score["iron_guard"] += 1 
-            print(score)
+            pretty_print()
             slow_print("\nYou catch more flies with honey than with vinegar.\n")       
             good_guy_two()
             break
@@ -186,11 +186,11 @@ def increment_score(pteam, cteam):
 
         if player_roll > comp_roll:
             score[pteam] += 1
-            print(score)
+            pretty_print()
             break
         elif player_roll < comp_roll:
             score[cteam] += 1
-            print(score)
+            pretty_print()
             break 
                     
 
@@ -271,7 +271,7 @@ def bad_guy():
                                " B: Stalk his movements\n").lower().strip()
         if assassin_style == "a":
             score["smiling_shadows"] += 1 
-            print(score)
+            pretty_print()
             slow_print("\nWell done. It's better if your prey isn't"
                        " on guard.\n")       
             bad_guy_two()
@@ -460,8 +460,13 @@ def start_again():
     
 
 def pretty_print():
+    """
+    Function to define how the scores (the dictionary) will be formatted. 
+    """
     for team, value in score.items():
-        print(f"{team}: {value}")
+        print("\n----------------------------\n"
+              f"     {team}: {value} \n"
+              "----------------------------")
 
 
 def input_validation(variable):
