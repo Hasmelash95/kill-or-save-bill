@@ -45,17 +45,17 @@ def main():
 
     """
     clear_terminal()
-    print("\nWelcome to this choose your own adventure"
-          " game set in the city of Arx - based on\nthe"
-          " text-based RPG Arx - After the Reckoning."
-          " You can choose to play as members\nof the"
-          " Ion Guard (the city watch) or the elusive"
-          " group of assassins, the Smiling\nShadows."
-          " As the game proceeds, you will be provided"
-          " options that you can\nchoose from by enterring"
-          " 'a' or 'b' into the terminal. A total of two"
-          " points\nfor the team of the your choice is"
-          " needed to win the game. Good luck!\n")
+    slow_print("\nWelcome to this choose your own adventure"
+               " game set in the city of Arx - based on\nthe"
+               " text-based RPG Arx - After the Reckoning."
+               " You can choose to play as members\nof the"
+               " Ion Guard (the city watch) or the elusive"
+               " group of assassins, the Smiling\nShadows."
+               " As the game proceeds, you will be provided"
+               " options that you can\nchoose from by enterring"
+               " 'a' or 'b' into the terminal. A total of two"
+               " points\nfor the team of the your choice is"
+               " needed to win the game. Good luck!\n")
     pretty_print()
     while True:          
         proceed = input("\nEnter 'go' to proceed.\n").lower().strip()
