@@ -86,8 +86,7 @@ def get_username():
                          "You can type 'exit' at"
                          " any time to exit.\n")
         if username == "exit" or username == "Exit":
-            main()
-            break
+            exit()
         if len(username) > 8 or len(username) < 1:
             print("\nUsername must be 1-8 characters."
                   f" {username} is {len(username)} characters."
@@ -463,7 +462,7 @@ def input_validation(variable):
     will be repeated until they enter a valid input.
     """
     if variable == "exit":
-        main()
+        exit()
     else:
         print("\nPlease choose A or B\n")
 
