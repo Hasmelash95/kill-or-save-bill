@@ -18,6 +18,9 @@ def slow_print(text):
     """
     Function to define how the output is printed to the user. 
     Code credit to Stack Overflow.
+    Args:
+    Text - parameter corresponds to the strings that will be
+    slow printed. A letter at a time. 
     """
     for letter in text:
         sys.stdout.write(letter)
@@ -42,7 +45,8 @@ def main():
     Prints the introduction text and prompts the user to type 'go'
     to proceed with the game. Any input other than 'go' will get
     an invalid data alert.
-
+    The pretty print function is called to print the score as 
+    defined by that function. 
     """
     clear_terminal()
     slow_print("\nWelcome to this choose your own adventure"
@@ -52,9 +56,9 @@ def main():
                " Ion Guard (the city watch) or the elusive"
                " group of assassins, the Smiling\nShadows."
                " As the game proceeds, you will be provided"
-               " options that you can\nchoose from by enterring"
+               " options that you can\nchoose from by entering"
                " 'a' or 'b' into the terminal. A total of two"
-               " points\nfor the team of the your choice is"
+               " points\nfor the team of your choice is"
                " needed to win the game. Good luck!\n")
     pretty_print()
     while True:          
@@ -74,7 +78,7 @@ def get_username():
     and only use a-z characters.
     If the username is not valid, it will prompt an alert
     and ask the user to try again.
-    Typing 'exit' will take the user to intro section.
+    Typing 'exit' will exit the application. 
     """
     global username
     while True:
@@ -170,6 +174,9 @@ def increment_score(pteam, cteam):
     If player and computer rolls are tied, then there will be 
     reroll and the While loop continues until the rolls are not 
     tied.
+    Args:
+    Pteam - refers to the player's team in the dictionary.
+    Cteam - refers to the computer's team in the dictionary.
     """
     while True:
         player_roll = randint(1, 10)
@@ -348,7 +355,6 @@ def good_guy_final_score():
     Function to define what would count as a success
     and the message to display if the player succeeds 
     or fails the Iron Guard game.
-
     If the player gets a score of 2 or more, then the
     success outcome will be printed. If not, the failure
     outcome will be.
@@ -384,7 +390,6 @@ def bad_guy_final_score():
     Function to define what would count as a success
     and the message to display if the player succeeds 
     or fails the Shadows game.
-
     If the player gets a score of 2 or more, then the
     success outcome will be printed. If not, the failure
     outcome will be.
@@ -429,6 +434,7 @@ def game_over_fail():
 def start_again():    
     """
     Function that defines the start again options.
+    The value for each team will revert to 0.
     User can start again without needing to go 
     through the introduction or input their username
     by typing 'a' or exit to the main page by typing
@@ -455,6 +461,7 @@ def start_again():
 def pretty_print():
     for team, value in score.items():
         print(f"{team}: {value}")
+
 
 def input_validation(variable):
     """
