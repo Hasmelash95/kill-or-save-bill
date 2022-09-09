@@ -56,7 +56,7 @@ def main():
           " 'a' or 'b' into the terminal. A total of two"
           " points\nfor the team of the your choice is"
           " needed to win the game. Good luck!\n")
-    print(score)
+    pretty_print()
     while True:          
         proceed = input("\nEnter 'go' to proceed.\n").lower().strip()
         if proceed != "go":
@@ -435,13 +435,13 @@ def start_again():
     'b'.
     The While loop persists until the user types a valid input.
     """
+    for team, value in score.items():
+        score[team] = 0
     while True:
         start_again = input("\nWould you like to start again?\n"
                             " A: Yes\n"
                             " B: No\n").lower().strip()
         if start_again == "a":
-            for team, value in score.items():
-                score[team] = 0
             choose_org()
             break
         elif start_again == "b":
@@ -465,6 +465,7 @@ def input_validation(variable):
     will be repeated until they enter a valid input.
     """
     if variable == "exit":
+        print("Exiting application...")
         exit()
     else:
         print("\nPlease choose A or B\n")
