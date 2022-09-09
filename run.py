@@ -80,6 +80,7 @@ def get_username():
     and ask the user to try again.
     Typing 'exit' will exit the application. 
     """
+    clear_terminal()
     global username
     while True:
         username = input("\nWhat's your name?\n"
@@ -110,6 +111,7 @@ def choose_org():
     function. 
     The While loop persists until the user types a valid input.
     """
+    clear_terminal()
     while True:
         org = input("\nAre you an Iron Guard or a Smiling Shadow?\n"
                     "Choose A or B:\n"
@@ -330,7 +332,7 @@ def bad_guy_final():
                        " attempt to strike with my"
                        " dagger\n"
                        " B: Blend in to the surroundings,"
-                       " behaving like any\nother passerby"
+                       " behaving like any other\n passerby"
                        " before attacking once close enough\n").lower().strip()
         if ambush == "a":
             slow_print("\nYou leap out of the bushes and Bill,"
@@ -377,7 +379,7 @@ def good_guy_final_score():
     else:
         slow_print("\nYou try to attack the assassin who is"
                    " about to deal the killing blow to"
-                   " Bill. However,/nyou miss and stab"
+                   " Bill. However,\nyou miss and stab"
                    " other instead. He falls to the ground"
                    " lifelessly but so\ntoo does Bill. You"
                    " were not fast enough. The killer runs"
@@ -435,15 +437,18 @@ def game_over_fail():
 def start_again():    
     """
     Function that defines the start again options.
-    The value for each team will revert to 0.
+    The score for each team will revert to 0 and will
+    display to user.
     User can start again without needing to go 
     through the introduction or input their username
     by typing 'a' or exit to the main page by typing
     'b'.
     The While loop persists until the user types a valid input.
     """
+    clear_terminal()
     for team, value in score.items():
         score[team] = 0
+    pretty_print()
     while True:
         start_again = input("\nWould you like to start again?\n"
                             " A: Yes\n"
