@@ -447,7 +447,6 @@ def start_again():
     """
     for team, value in score.items():
         score[team] = 0
-    pretty_print()
     while True:
         start_again = input("\nWould you like to start again?\n"
                             " A: Yes\n"
