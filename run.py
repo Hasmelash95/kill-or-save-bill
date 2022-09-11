@@ -445,7 +445,6 @@ def start_again():
     'b'.
     The While loop persists until the user types a valid input.
     """
-    clear_terminal()
     for team, value in score.items():
         score[team] = 0
     pretty_print()
