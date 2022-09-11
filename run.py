@@ -397,11 +397,11 @@ def good_guy_final_score():
     else:
         slow_print("\nYou try to attack the assassin who is"
                    " about to deal the killing blow to"
-                   " Bill. However,\nyou miss and stab"
+                   " Bill.\nHowever, you miss and stab"
                    " other instead. He falls to the ground"
-                   " lifelessly but so\ntoo does Bill. You"
+                   " lifelessly\nbut so too does Bill. You"
                    " were not fast enough. The killer runs"
-                   " off while you stare at\nBill's still"
+                   " off while you\nstare at Bill's still"
                    " body in shock.\n") 
         game_over_fail()
 
