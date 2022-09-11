@@ -195,7 +195,7 @@ def increment_score(pteam, cteam, fail_message, success_message):
     while True:
         player_roll = randint(1, 10)
         comp_roll = randint(1, 10)
-        print(f"\nYou rolled {player_roll} against {comp_roll}!")
+        slow_print(f"\nYou rolled {player_roll} against {comp_roll}!")
 
         if player_roll > comp_roll:
             score[pteam] += 1
