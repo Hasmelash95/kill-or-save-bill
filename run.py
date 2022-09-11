@@ -124,7 +124,7 @@ def choose_org():
                     " A: Iron Guard\n"
                     " B: Smiling Shadow\n").lower().strip()
         if org == "a":
-            slow_print(f"Hello {USERNAME}, the citizens of Arx once" 
+            slow_print(f"\nHello {USERNAME}, the citizens of Arx once" 
                        " again need you to keep them safe.\nThere are"
                        " rumors that a hit has been placed on poor"
                        " Bill, the Blacksmith.\nThe vile assassins of"
@@ -133,7 +133,7 @@ def choose_org():
             good_guy()
             break
         elif org == "b":
-            slow_print(f"Hello {USERNAME}, the boss has a job for you"
+            slow_print(f"\nHello {USERNAME}, the boss has a job for you"
                        " and it pays verrryyy well.\nBrace yourself."
                        " Apparently someone really has it in for Bill,"
                        " the Blacksmith.\nSomeone wealthy. We don't"
@@ -195,17 +195,17 @@ def increment_score(pteam, cteam, fail_message, success_message):
     while True:
         player_roll = randint(1, 10)
         comp_roll = randint(1, 10)
-        print(f"You rolled {player_roll} against {comp_roll}!")
+        print(f"\nYou rolled {player_roll} against {comp_roll}!")
 
         if player_roll > comp_roll:
             score[pteam] += 1
             pretty_print()
-            print(success_message)
+            slow_print(success_message)
             break
         elif player_roll < comp_roll:
             score[cteam] += 1
             pretty_print()
-            print(fail_message)
+            slow_print(fail_message)
             break 
                     
 
