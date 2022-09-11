@@ -8,7 +8,7 @@ import time
 # For dice rolls
 from random import randint
 
-username = ""
+USERNAME = None
 
 # Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
@@ -81,21 +81,21 @@ def get_username():
     Typing 'exit' will exit the application. 
     """
     clear_terminal()
-    global username
+    global USERNAME
     while True:
-        username = input("\nWhat's your name?\n"
+        USERNAME = input("\nWhat's your name?\n"
                          "Choose a name with 1-8 characters:\n"
                          "(Only a-z characters)\n"
                          "You can type 'exit' at"
                          " any time to exit.\n")
-        if username == "exit" or username == "Exit":
+        if USERNAME == "exit" or USERNAME == "Exit":
             print("Exiting application...")
             exit()
-        if len(username) > 8 or len(username) < 1:
+        if len(USERNAME) > 8 or len(USERNAME) < 1:
             print("\nUsername must be 1-8 characters."
-                  f" {username} is {len(username)} characters."
+                  f" {USERNAME} is {len(USERNAME)} characters."
                   " Please try again.\n")  
-        elif username.isalpha() is not True:
+        elif USERNAME.isalpha() is not True:
             print("\nUsername must only consist of"
                   " a-z characters. Please try again.\n")
         else:
@@ -118,7 +118,7 @@ def choose_org():
                     " A: Iron Guard\n"
                     " B: Smiling Shadow\n").lower().strip()
         if org == "a":
-            slow_print(f"Hello {username}, the citizens of Arx once" 
+            slow_print(f"Hello {USERNAME}, the citizens of Arx once" 
                        " again need you to keep them safe.\nThere are"
                        " rumors that a hit has been placed on poor"
                        " Bill, the Blacksmith.\nThe vile assassins of"
@@ -127,7 +127,7 @@ def choose_org():
             good_guy()
             break
         elif org == "b":
-            slow_print(f"Hello {username}, the boss has a job for you"
+            slow_print(f"Hello {USERNAME}, the boss has a job for you"
                        " and it pays verrryyy well.\nBrace yourself."
                        " Apparently someone really has it in for Bill,"
                        " the Blacksmith.\nSomeone wealthy. We don't"
@@ -421,7 +421,7 @@ def game_over_succeed():
     """
     Function to display the general game success message when called.
     """
-    slow_print(f"\nCongratulations, {username}! You have succeeded" 
+    slow_print(f"\nCongratulations, {USERNAME}! You have succeeded" 
                " in your mission!\n")
     start_again()
 
@@ -430,7 +430,7 @@ def game_over_fail():
     """
     Function to display the general game failure message when called.
     """
-    slow_print(f"\nOh no, {username}, you have failed your mission.\n")
+    slow_print(f"\nOh no, {USERNAME}, you have failed your mission.\n")
     start_again()
 
 
