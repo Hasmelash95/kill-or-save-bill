@@ -10,9 +10,10 @@ from random import randint
 
 # Constants
 USERNAME = None
+# Messages to be printed depending on dice rolls
 GUARD_FAILURE = "You can sense that time is running out!\n"
-SHADOWS_FAILURE = "Your mark is getting increasingly wary!\n"
 GUARD_SUCCESS = "You are one step closer to saving him!\n"
+SHADOWS_FAILURE = "Your mark is getting increasingly wary!\n"
 SHADOWS_SUCCESS = "Your mark is lowering his guard!\n"
 
 # Dictionary to track the scores
@@ -95,7 +96,7 @@ def get_username():
                          " any time to exit.\n").strip()
         if USERNAME == "exit" or USERNAME == "Exit":
             print("Exiting application...")
-            exit()
+            sys.exit()
         elif len(USERNAME) > 8 or len(USERNAME) < 1:
             print("\nUsername must be 1-8 characters."
                   f" {USERNAME} is {len(USERNAME)} characters."
@@ -166,8 +167,8 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "b":
-            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
-                            SHADOWS_SUCCESS)
+            increment_score("iron_guard", "smiling_shadows", GUARD_FAILURE, 
+                            GUARD_SUCCESS)
             good_guy_two()
             break
         else:
@@ -233,8 +234,8 @@ def good_guy_two():
             game_over_fail()
             break              
         elif chase_shadows == "b":  
-            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
-                            SHADOWS_SUCCESS)
+            increment_score("iron_guard", "smiling_shadows", GUARD_FAILURE, 
+                            GUARD_SUCCESS)
             good_guy_final()
             break
         else:
@@ -265,8 +266,8 @@ def good_guy_final():
             game_over_fail()
             break
         elif confront == "b": 
-            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
-                            SHADOWS_SUCCESS)
+            increment_score("iron_guard", "smiling_shadows", GUARD_FAILURE, 
+                            GUARD_SUCCESS)
             good_guy_final_score()
             break
         else: 
@@ -499,7 +500,7 @@ def input_validation(variable):
     """
     if variable == "exit":
         print("Exiting application...")
-        exit()
+        sys.exit()
     else:
         print("\nPlease choose A or B\n")
 
