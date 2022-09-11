@@ -8,7 +8,12 @@ import time
 # For dice rolls
 from random import randint
 
+# Constants
 USERNAME = None
+GUARD_FAILURE = "You can sense that time is running out!\n"
+SHADOWS_FAILURE = "Your mark is getting increasingly wary!\n"
+GUARD_SUCCESS = "You are one step closer to saving him!\n"
+SHADOWS_SUCCESS = "Your mark is lowering his guard!\n"
 
 # Dictionary to track the scores
 score = {"iron_guard": 0, "smiling_shadows": 0}
@@ -87,11 +92,11 @@ def get_username():
                          "Choose a name with 1-8 characters:\n"
                          "(Only a-z characters)\n"
                          "You can type 'exit' at"
-                         " any time to exit.\n")
+                         " any time to exit.\n").strip()
         if USERNAME == "exit" or USERNAME == "Exit":
             print("Exiting application...")
             exit()
-        if len(USERNAME) > 8 or len(USERNAME) < 1:
+        elif len(USERNAME) > 8 or len(USERNAME) < 1:
             print("\nUsername must be 1-8 characters."
                   f" {USERNAME} is {len(USERNAME)} characters."
                   " Please try again.\n")  
@@ -161,14 +166,15 @@ def good_guy():
             good_guy_two()
             break
         elif investigation_style == "b":
-            increment_score("iron_guard", "smiling_shadows")
+            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
+                            SHADOWS_SUCCESS)
             good_guy_two()
             break
         else:
             input_validation(investigation_style)
 
 
-def increment_score(pteam, cteam):
+def increment_score(pteam, cteam, fail_message, success_message):
     """
     Function to roll a 10 sided dice for the player and the 
     computer and compare their rolls.
@@ -180,6 +186,10 @@ def increment_score(pteam, cteam):
     Args:
     Pteam - refers to the player's team in the dictionary.
     Cteam - refers to the computer's team in the dictionary.
+    fail_message - for the message that will be printed when player
+    loses dice roll.
+    success_message - for the message that will be printed when 
+    player wins dice roll.
     """
     while True:
         player_roll = randint(1, 10)
@@ -189,10 +199,12 @@ def increment_score(pteam, cteam):
         if player_roll > comp_roll:
             score[pteam] += 1
             pretty_print()
+            print(success_message)
             break
         elif player_roll < comp_roll:
             score[cteam] += 1
             pretty_print()
+            print(fail_message)
             break 
                     
 
@@ -221,7 +233,8 @@ def good_guy_two():
             game_over_fail()
             break              
         elif chase_shadows == "b":  
-            increment_score("iron_guard", "smiling_shadows")
+            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
+                            SHADOWS_SUCCESS)
             good_guy_final()
             break
         else:
@@ -252,7 +265,8 @@ def good_guy_final():
             game_over_fail()
             break
         elif confront == "b": 
-            increment_score("iron_guard", "smiling_shadows")
+            increment_score("iron_guard", "smiling_shadows", SHADOWS_FAILURE, 
+                            SHADOWS_SUCCESS)
             good_guy_final_score()
             break
         else: 
@@ -279,7 +293,8 @@ def bad_guy():
             bad_guy_two()
             break
         elif assassin_style == "b":   
-            increment_score("smiling_shadows", "iron_guard")
+            increment_score("smiling_shadows", "iron_guard", SHADOWS_FAILURE,
+                            SHADOWS_SUCCESS)
             bad_guy_two()
             break
         else:
@@ -301,7 +316,8 @@ def bad_guy_two():
                        " A: Map out the area\n"
                        " B: Ambush ASAP\n").lower().strip()
         if timing == "a":
-            increment_score("smiling_shadows", "iron_guard")
+            increment_score("smiling_shadows", "iron_guard", SHADOWS_FAILURE,
+                            SHADOWS_SUCCESS)
             bad_guy_final()
             break
         elif timing == "b":
@@ -346,7 +362,8 @@ def bad_guy_final():
             game_over_fail()
             break
         elif ambush == "b":  
-            increment_score("smiling_shadows", "iron_guard")
+            increment_score("smiling_shadows", "iron_guard", SHADOWS_FAILURE,
+                            SHADOWS_SUCCESS)
             bad_guy_final_score()
             break
         else:
@@ -469,7 +486,7 @@ def pretty_print():
     for team, value in score.items():
         print("\n----------------------------\n"
               f"     {team}: {value} \n"
-              "----------------------------")
+              "----------------------------\n")
 
 
 def input_validation(variable):
