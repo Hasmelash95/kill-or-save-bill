@@ -1,6 +1,6 @@
 # Hermon Asmelash
 
-## Kill (or save) Bill 
+# Kill (or save) Bill 
 
 Kill (or save) Bill is A Choose Your Own Adventure style game created using Python 3 based on story elements of the text-based RPG Arx - After the Reckoning. It's a minigame that players of the game or simply anyone who enjoys that style of game can play in their downtime, choosing to either play as an assassin of the Smiling Shadows or a member of the Iron Guard, defenders of the city. The game uses a score based system with a goal to get a higher score before the other team (the computer).
 
@@ -100,6 +100,31 @@ This game works in the same way as the Iron Guard game. The screenshots are belo
 ![Screenshot 2022-09-13 at 12 41 19](https://user-images.githubusercontent.com/103432143/189892236-254b6917-f8e4-45d6-a855-f7ba1e76f8dc.png)
 
 ![Screenshot 2022-09-13 at 12 51 30](https://user-images.githubusercontent.com/103432143/189893844-a772d971-4742-4dad-b469-98c1e66c5d32.png)
+
+### Exiting Game
+
+Typing "exit" or "Exit" or " exit" will exit the app. 
+
+![Screenshot 2022-09-13 at 12 54 56](https://user-images.githubusercontent.com/103432143/189894452-1f6edf62-2b7b-496b-a47d-3aa77b50ab2c.png)
+
+## Technologies Used
+
+Python3 
+
+HTML5
+
+CSS3
+
+GitHub
+
+Gitpod
+
+Git
+
+Heroku 
+
+
+
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
