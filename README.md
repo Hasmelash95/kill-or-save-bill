@@ -18,9 +18,34 @@ Kill (or save) Bill is A Choose Your Own Adventure style game created using Pyth
 
 ### Game Flowchart
 
-To plan out the structure of the game, I used smartdraw.
+To plan out the structure of the game, I used [smartdraw](https://cloud.smartdraw.com/).
 
-### Features
+![](https://github.com/Hasmelash95/kill-or-save-bill/blob/main/README-assets/flowchart/flowchart.png)
+
+## Features
+
+Opening the app takes the user to a browser hosted by heroku. The headings for the game are at the top using Georgia font and an off-white color against a teal background. 
+
+![Screenshot 2022-09-13 at 11 40 46](https://user-images.githubusercontent.com/103432143/189881224-aaf1f30d-e772-44fa-8d3e-41fd8696343c.png)
+
+### Intro Text
+
+The intro text introduces the game and gives the player instructions in second person to go along with the adventure theme. User is provided the option to proceed by typing "go". 
+
+![Screenshot 2022-09-13 at 11 43 32](https://user-images.githubusercontent.com/103432143/189881843-7cbdafec-8dd8-401e-a14f-e3786d22c480.png)
+
+Typing anything other than "go" will prompt the invalid input message and the user will be asked to type "go" again.
+
+![Screenshot 2022-09-13 at 11 45 07](https://user-images.githubusercontent.com/103432143/189881975-298f7503-3903-4f79-9fa1-16d4e2ff5d67.png)
+
+"Go" and " go" are valid inputs as the strip() and lower() methods have been used.
+
+### Enter Username 
+
+Typing go will clear the terminal and ask user to input their username. Usernames must be 1-8 characters long and only have a-z letters. 
+
+![Screenshot 2022-09-13 at 11 49 00](https://user-images.githubusercontent.com/103432143/189882717-f87617ae-bbfb-4b8b-8145-b5f1ce3339d9.png)
+
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
