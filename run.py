@@ -254,7 +254,7 @@ def good_guy_final():
         confront = input("\nYou get to the Nightingale Park, what do you do?\n"
                          "Choose A or B:\n"
                          " A: Charge at the assassins"
-                         " as soon as you enter\n"
+                         " as soon as I enter.\n"
                          " B: Create a noise distraction"
                          " before aiming for the targets.\n").lower().strip()
         if confront == "a":
@@ -284,8 +284,8 @@ def bad_guy():
     while True:
         assassin_style = input("\nHow do you find your target?\n"
                                "Choose A or B:\n"
-                               " A: Charm his friends\n"
-                               " B: Stalk his movements\n").lower().strip()
+                               " A: Charm his friends.\n"
+                               " B: Stalk his movements.\n").lower().strip()
         if assassin_style == "a":
             score["smiling_shadows"] += 1
             pretty_print()
@@ -313,8 +313,8 @@ def bad_guy_two():
     while True:
         timing = input("\nDo you ambush him the first chance you get"
                        " or map out the area for onlookers?\n"
-                       " A: Map out the area\n"
-                       " B: Ambush ASAP\n").lower().strip()
+                       " A: Map out the area.\n"
+                       " B: Ambush ASAP!\n").lower().strip()
         if timing == "a":
             increment_score("smiling_shadows", "iron_guard", SHADOWS_FAILURE,
                             SHADOWS_SUCCESS)
@@ -345,10 +345,10 @@ def bad_guy_final():
         ambush = input("\nHow do you attack?\n"
                        " A: Leap out of the bushes and"
                        " attempt to strike with my"
-                       " dagger\n"
+                       " dagger!\n"
                        " B: Blend in to the surroundings,"
                        " behaving like any other\n passerby"
-                       " before attacking once close enough\n").lower().strip()
+                       " before attacking once close enough.\n").lower().strip()
         if ambush == "a":
             slow_print("\nYou leap out of the bushes and Bill,"
                        " startled by your presence\nscreams"
@@ -466,9 +466,9 @@ def start_again():
 
     while True:
         restart_game = input("\nWould you like to start again?\n"
-                             " A: Yes\n"
+                             " A: Yes.\n"
                              " B: No, take me to the"
-                             " intro\n").lower().strip()
+                             " intro.\n").lower().strip()
         if restart_game == "a":
             choose_org()
             break
