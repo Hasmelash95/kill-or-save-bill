@@ -502,7 +502,7 @@ def input_validation(variable):
         print("Exiting application...")
         sys.exit()
     else:
-        print("\nPlease choose A or B\n")
+        print(f"\n{variable} is invalid. Please choose A or B.\n")
 
 
 # The function will only be called if the file is run from the command line
