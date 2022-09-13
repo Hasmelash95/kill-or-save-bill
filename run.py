@@ -95,7 +95,7 @@ def get_username():
                                "Choose a name with 1-8 characters:\n"
                                "(Only a-z characters)\n"
                                "You can type 'exit' at"
-                               " any time to exit.\n").strip()
+                               " any time to exit app.\n").strip()
         if USERNAME_INPUT == "exit" or USERNAME_INPUT == "Exit":
             print("Exiting application...")
             sys.exit()
@@ -276,7 +276,7 @@ def good_guy_final():
 
 def bad_guy():
     """
-    Part one of the good guy game (Smiling Shadows), player can choose
+    Part one of the bad guy game (Smiling Shadows), player can choose
     one option which will give them an automatic score increase,
     or the other option which will take them to a dice roll.
     The While loop persists until the user types a valid input.
@@ -467,12 +467,13 @@ def start_again():
     while True:
         restart_game = input("\nWould you like to start again?\n"
                              " A: Yes\n"
-                             " B: No\n").lower().strip()
+                             " B: No, take me to the"
+                             " intro\n").lower().strip()
         if restart_game == "a":
             choose_org()
             break
         if restart_game == "b":
-            slow_print("\nHope to see you again soon!\n")
+            slow_print("\nHope you have another go soon!\n")
             main()
             break
         input_validation(restart_game)
