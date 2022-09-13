@@ -1,16 +1,26 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hermon Asmelash
 
-Welcome Hasmelash95,
+## Kill (or save) Bill 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Kill (or save) Bill is A Choose Your Own Adventure style game created using Python 3 based on story elements of the text-based RPG Arx - After the Reckoning. It's a minigame that players of the game or simply anyone who enjoys that style of game can play in their downtime, choosing to either play as an assassin of the Smiling Shadows or a member of the Iron Guard, defenders of the city. The game uses a score based system with a goal to get a higher score before the other team (the computer).
 
-## Reminders
+[For the deployed app, click here.](https://kill-or-save-bill.herokuapp.com/)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## User Experience (UX)
 
-## Creating the Heroku app
+### User Stories
+
+1. I'm an Arx player and would love to play out a sandboxed story based on elements from the game.
+2. I enjoy cops and robbers style games or choose your own adventure games in general and would love an opportunity to try another. 
+3. I want to play a game that doesn't occupy my time with character generation or load times.
+4. I would like a game that allows me to restart at the end without needing to run through the introduction so I can try every option available easily.
+5. I like games of chance, leaving the outcome partly to the dice.
+
+### Game Flowchart
+
+To plan out the structure of the game, I used smartdraw.
+
+### Features
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
