@@ -67,6 +67,10 @@ The user is given a story setting and two options as to how to proceed. The gent
 
 A random number (1-10) is chosen for the player and the computer. The higher number wins the round and their team's score is incremented. If the rolls are tied then the game will roll again until the numbers are different. 
 
+### Imports
+
+
+
 ### Second Decision
 
 The next set of options provides an instant fail option (generally the less cautious option) and an option that takes the user to another dice roll. Once again, typing anything other than or "a" or "b" would trigger the "Please choose A or B" message. 
@@ -123,8 +127,36 @@ Git
 
 Heroku 
 
+## Testing
 
+### Validation
 
+The app was run through PEP8 with no errors or warnings: 
+
+![Screenshot 2022-09-13 at 10 52 10](https://user-images.githubusercontent.com/103432143/189965623-7e9e0f90-1235-4f41-a80a-e1c8088cda1f.png)
+
+Running the app through [W3C](https://validator.w3.org/) and [Jigsaw](https://jigsaw.w3.org/css-validator/) also resulted in no errors. 
+
+### Performance
+
+A Lighthouse test was taken:
+
+![Screenshot 2022-09-13 at 18 22 58](https://user-images.githubusercontent.com/103432143/189967381-e2b0d64c-8a06-4adc-91f6-66eb576c691b.png)
+
+### Functionality
+![Screenshot 2022-09-13 at 18 24 44](https://user-images.githubusercontent.com/103432143/189968279-9f5c820a-aaf9-4f93-b874-87ae988ec216.png)
+
+![Screenshot 2022-09-13 at 18 25 04](https://user-images.githubusercontent.com/103432143/189968306-db992995-3867-4040-b982-9f9c646c8b85.png)
+
+![Screenshot 2022-09-13 at 18 25 18](https://user-images.githubusercontent.com/103432143/189968329-b4b451ed-6e47-410b-b441-fcca60e67d41.png)
+
+![Screenshot 2022-09-13 at 18 25 30](https://user-images.githubusercontent.com/103432143/189968369-34f043bc-1d7e-4d75-8ccd-bd9ab8e82131.png)
+
+![Screenshot 2022-09-13 at 18 25 49](https://user-images.githubusercontent.com/103432143/189968413-b5e62372-b591-4a1c-bef1-41ade68a6f85.png)
+
+![Screenshot 2022-09-13 at 18 27 08](https://user-images.githubusercontent.com/103432143/189968810-f106fd1c-3cf2-4818-9c0a-6478e9b3c4dd.png)
+
+## Deployment
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
