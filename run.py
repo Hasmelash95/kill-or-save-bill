@@ -223,7 +223,7 @@ def good_guy_two():
     while True:
         chase_shadows = input("\nWhat do you do?\n"
                               "Choose A or B:\n"
-                              " A: Find Bob and bring him to justice\n"
+                              " A: Find Bob and bring him to justice!\n"
                               " B: Get to Nightingale Park!\n").lower().strip()
         if chase_shadows == "a":
             slow_print("\nYou find Bob in his house and bring"
@@ -348,7 +348,8 @@ def bad_guy_final():
                        " dagger!\n"
                        " B: Blend in to the surroundings,"
                        " behaving like any other\n passerby"
-                       " before attacking once close enough.\n").lower().strip()
+                       " before attacking once close"
+                       "enough.\n").lower().strip()
         if ambush == "a":
             slow_print("\nYou leap out of the bushes and Bill,"
                        " startled by your presence\nscreams"
