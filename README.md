@@ -30,7 +30,7 @@ Opening the app takes the user to a browser hosted by heroku. The headings for t
 
 ### Intro Text
 
-The intro text introduces the game and gives the player instructions in second person to go along with the adventure theme. User is provided the option to proceed by typing "go". 
+The intro text introduces the game and gives the player instructions in second person to go along with the adventure theme. Slow print is used to print the text one letter at a time for the ambience. It also provides the current scores for the two teams, which at the start will be 0. User is provided the option to proceed by typing "go". 
 
 ![Screenshot 2022-09-13 at 11 43 32](https://user-images.githubusercontent.com/103432143/189881843-7cbdafec-8dd8-401e-a14f-e3786d22c480.png)
 
@@ -42,10 +42,64 @@ Typing anything other than "go" will prompt the invalid input message and the us
 
 ### Enter Username 
 
-Typing go will clear the terminal and ask user to input their username. Usernames must be 1-8 characters long and only have a-z letters. 
+Typing go will clear the terminal and ask user to input their username. Usernames must be 1-8 characters long and only have a-z letters. The strip() method ensures that empty spaces will not be marked as invalid - if the user also has letters in their input. E.g. " Hermon" will be a valid username. 
 
 ![Screenshot 2022-09-13 at 11 49 00](https://user-images.githubusercontent.com/103432143/189882717-f87617ae-bbfb-4b8b-8145-b5f1ce3339d9.png)
 
+![Screenshot 2022-09-13 at 12 04 05](https://user-images.githubusercontent.com/103432143/189885808-1d84daa3-0697-43d1-af7b-14709c97d31c.png)
+
+### Choose Game
+
+Entering a valid username will clear the terminal and take the user to the option to choose the game they want to play. To play as an Iron Guard or an Shadow. Typing any option other than "a" or "b" will prompt an invalid input message. "A", "B", " a", " b" are all valid inputs due to the strip() and lower() methods. 
+
+![Screenshot 2022-09-13 at 12 49 57](https://user-images.githubusercontent.com/103432143/189893563-cb7e6cf7-b89c-4807-a13f-003a3d0179bf.png)
+
+
+### First Decision
+
+The user is given a story setting and two options as to how to proceed. The gentle/subtle option will give the user a free point, whereas the other option will take them to a dice roll.
+
+![Screenshot 2022-09-13 at 12 13 39](https://user-images.githubusercontent.com/103432143/189887119-cc1290b8-6c3e-4284-9122-c3bbd31471e8.png)
+
+![Screenshot 2022-09-13 at 12 15 45](https://user-images.githubusercontent.com/103432143/189887728-80084a06-d3ba-4bce-8b59-a5e19c5c08b0.png)
+
+### Dice Roll
+
+A random number (1-10) is chosen for the player and the computer. The higher number wins the round and their team's score is incremented. If the rolls are tied then the game will roll again until the numbers are different. 
+
+### Second Decision
+
+The next set of options provides an instant fail option (generally the less cautious option) and an option that takes the user to another dice roll. Once again, typing anything other than or "a" or "b" would trigger the "Please choose A or B" message. 
+
+![Screenshot 2022-09-13 at 12 36 45](https://user-images.githubusercontent.com/103432143/189891249-b4dfb290-19cf-45bb-9d65-28264049cc69.png)
+
+![Screenshot 2022-09-13 at 12 32 45](https://user-images.githubusercontent.com/103432143/189890520-ea934df2-b794-4156-920a-0920af570431.png)
+
+Instant fail:
+
+![Screenshot 2022-09-13 at 12 30 46](https://user-images.githubusercontent.com/103432143/189890141-8701abd3-6935-4759-9f92-737d03bce6db.png)
+
+Typing "a" will take the user to the choose game section, whereas "b" will take them to the introduction. In both cases, the terminal will be cleared and the scores for both teams will reset to 0.
+
+### Final Decision
+
+The final set of options is like the second, in that one option is an instant fail and the other takes the user to a dice roll.
+
+![Screenshot 2022-09-13 at 12 34 15](https://user-images.githubusercontent.com/103432143/189891045-9cd44baa-9c61-481e-85f3-4218a168c354.png)
+
+![Screenshot 2022-09-13 at 12 34 25](https://user-images.githubusercontent.com/103432143/189891058-195e49e7-ccfc-47e0-9453-8b4e12c7e59b.png)
+
+This time, the scores are compared after the dice roll and if the player has a score of 2 or more, they win the game. If not, they lose and get the fail message. 
+
+### Smiling Shadows Game
+
+This game works in the same way as the Iron Guard game. The screenshots are below:
+
+![Screenshot 2022-09-13 at 12 41 02](https://user-images.githubusercontent.com/103432143/189892222-5f15e423-1da0-4cfe-a85f-099534c27e9e.png)
+
+![Screenshot 2022-09-13 at 12 41 19](https://user-images.githubusercontent.com/103432143/189892236-254b6917-f8e4-45d6-a855-f7ba1e76f8dc.png)
+
+![Screenshot 2022-09-13 at 12 51 30](https://user-images.githubusercontent.com/103432143/189893844-a772d971-4742-4dad-b469-98c1e66c5d32.png)
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
