@@ -1,5 +1,6 @@
-# Importing modules
-
+"""
+Importing modules
+"""
 # To use os.clear to clear the terminal
 import os
 # For slow print
@@ -172,7 +173,6 @@ def good_guy():
                             GUARD_SUCCESS)
             good_guy_two()
             break
-        
         input_validation(investigation_style)
 
 
@@ -208,7 +208,7 @@ def increment_score(pteam, cteam, fail_message, success_message):
             pretty_print()
             slow_print(fail_message)
             break
-                    
+                  
 
 def good_guy_two():
     """
@@ -216,7 +216,7 @@ def good_guy_two():
     Iron Guard game one will lead to a dice roll while
     the other will be an instant fail that ends the game.
     """
-    slow_print("\nYou find out that the an ambush is being plotted"
+    slow_print("\nYou find out that an ambush is being plotted"
                " for poor Bill in Nightingale\nPark. The assassins"
                " were hired by his romantic rival, Bob.\n")
     while True:
@@ -233,7 +233,7 @@ def good_guy_two():
                        " the wealthy merchant, Bob, is\nreleased.\n")
             # Instant fail code      
             game_over_fail()
-            break             
+            break            
         if chase_shadows == "b":  
             increment_score("iron_guard", "smiling_shadows", GUARD_FAILURE,
                             GUARD_SUCCESS)
@@ -270,7 +270,6 @@ def good_guy_final():
                             GUARD_SUCCESS)
             good_guy_final_score()
             break
-        
         input_validation(confront)
 
 
@@ -394,9 +393,9 @@ def good_guy_final_score():
     else:
         slow_print("\nYou try to attack the assassin who is"
                    " about to deal the killing blow to"
-                   " Bill.\nHowever, you miss and stab"
+                   " Bill.\nHowever, you miss and stab the"
                    " other instead. She falls to the ground"
-                   " lifelessly\nbut so too does Bill. You"
+                   " lifelessly\nbut so does Bill. You"
                    " were not fast enough. The killer runs"
                    " off while you\nstare at Bill's still"
                    " body in shock.\n")
@@ -422,7 +421,7 @@ def bad_guy_final_score():
         game_over_succeed()
     else:
         slow_print("\nYou walk past Bill nochalantly and"
-                   " and attempt a mortal blow. Alas, you"
+                   " attempt a mortal blow. Alas, you"
                    " are\nonly able to nick him a little"
                    " which gives him the time to struggle"
                    " from your\ngrip and call for help."
@@ -449,7 +448,7 @@ def game_over_fail():
     start_again()
 
 
-def start_again():   
+def start_again():  
     """
     Function that defines the start again options.
     The score for each team will revert to 0 and will
@@ -460,8 +459,8 @@ def start_again():
     'b'.
     The While loop persists until the user types a valid input.
     """
-    for team, value in score.items():
-        score[team] = 0
+    score["iron_guard"] = 0
+    score["smiling_shadows"] = 0
     while True:
         restart_game = input("\nWould you like to start again?\n"
                              " A: Yes\n"
@@ -472,7 +471,7 @@ def start_again():
         if restart_game == "b":
             slow_print("\nHope to see you again soon!\n")
             main()
-            break     
+            break    
         input_validation(restart_game)
 
 
