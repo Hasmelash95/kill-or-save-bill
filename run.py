@@ -104,7 +104,7 @@ def get_username():
                   f" {USERNAME_INPUT} is {len(USERNAME_INPUT)} characters."
                   " Please try again.\n")
         elif USERNAME_INPUT.isalpha() is not True:
-            print("\nusername must only consist of"
+            print("\nUsername must only consist of"
                   " a-z characters. Please try again.\n")
         else:
             choose_org()
