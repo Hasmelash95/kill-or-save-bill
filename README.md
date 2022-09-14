@@ -159,6 +159,34 @@ A Lighthouse test was taken:
 
 ![Screenshot 2022-09-13 at 18 27 08](https://user-images.githubusercontent.com/103432143/189968810-f106fd1c-3cf2-4818-9c0a-6478e9b3c4dd.png)
 
+Tests 8 and 9 were carried out for each question that asked the user to type "a" or "b". 
+
+### Compatibility 
+
+Tests were carried out on Google Chrome, Safari.
+
+### Testing User Stories
+
+1. I'm an Arx player and would love to play out a sandboxed story based on elements from the game.
+
+PASS - The game uses multiple elements from the Arx-world and players can play the game as much as they'd like with no broader implications.
+
+2. I enjoy cops and robbers style games or choose your own adventure games in general and would love an opportunity to try another. 
+
+PASS - The game offers a player the option to play as the good guy or the bad guy and the outcome is a result of both their decision (as is the case of this style of game) and the dice roll. 
+
+3. I want to play a game that doesn't occupy my time with character generation or load times.
+
+PASS - Besides needing to input a valid username, there is no character generation and it doesn't take long for the user to start the game properly. 
+
+4. I would like a game that allows me to restart at the end without needing to run through the introduction so I can try every option available easily.
+
+PASS - Typing yes when the prompt asks if they'd like to start again takes the player to the choose a game section, not needing to read the intro text again.
+
+5. I like games of chance, leaving the outcome partly to the dice.
+
+PASS - The dice roll check adds an element of chance. While decisions the player makes can give them an extra point for free or lead to an instant fail, the outcome is dependant on dice rolls. A random number is generated (1-10) for both the user and the opposing team (the computer). The score increments depending on which team's roll is higher. 
+
 ## Deployment
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
