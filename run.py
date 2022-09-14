@@ -25,7 +25,7 @@ score = {"iron_guard": 0, "smiling_shadows": 0}
 def slow_print(text):
     """
     Function to define how the output is printed to the user.
-    Code credit to Stack Overflow.
+    Code credit to SJECollins.
     Args:
     Text - parameter corresponds to the strings that will be
     slow printed. A letter at a time.

@@ -207,16 +207,9 @@ Beside the incompatibility with mobile devices, there are no unfixed bugs in the
 
 ## Deployment
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Deploying the App
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
+### Cloning the Repository
 
 ## Acknowledgements 
 
@@ -229,6 +222,8 @@ Dan and Dave, creators of [Arx - After the Recknoning](https://play.arxmush.org/
 [StackOverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) for the clear terminal code.
 
 [SJECollins](https://github.com/SJECollins/ci-pp3-hide-and-seek/blob/main/run.py) for the slow print code.
+
+[charlie-vf](https://github.com/charlie-vf/the-hobbit-game/blob/main/run.py) for inspiration on setting the username input.
 
 Code Institute for the template and learning material. 
 
