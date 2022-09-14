@@ -69,7 +69,10 @@ A random number (1-10) is chosen for the player and the computer. The higher num
 
 ### Imports
 
-
+Imported modules: 
+os - to clear the terminal.
+sys and time - to control the rate that text is printed. One letter at a time.
+randint - a random number generator for the dice rolls. 
 
 ### Second Decision
 
