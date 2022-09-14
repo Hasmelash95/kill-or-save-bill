@@ -218,9 +218,17 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 
 Connect your GitHub repository and deploy as normal.
 
-## Constraints
+## Acknowledgements 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+I would like to thank my mentor, Brian Macharia for his help during the process and offering much needed advice. 
 
------
-Happy coding!
+My friend, Victoria for talking through some problems with me. 
+
+Dan and Dave, creators of [Arx - After the Recknoning](https://play.arxmush.org/) for the lore that inspired this game.
+
+[StackOverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) for the clear terminal code.
+
+[SJECollins](https://github.com/SJECollins/ci-pp3-hide-and-seek/blob/main/run.py) for the slow print code.
+
+Code Institute for the template and learning material. 
+
