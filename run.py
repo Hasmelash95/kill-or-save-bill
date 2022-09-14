@@ -47,7 +47,7 @@ def clear_terminal():
 def main():
     """
     Function to define the intro text, it will be the starting
-    point whenever a user enters 'exit'.
+    point when the app runs.
     Sets the score for the dictionary values to 0 when function
     is called.
     Prints the introduction text and prompts the user to type 'go'

@@ -114,6 +114,12 @@ Typing "exit" or "Exit" or " exit" will exit the app.
 
 ![Screenshot 2022-09-13 at 12 54 56](https://user-images.githubusercontent.com/103432143/189894452-1f6edf62-2b7b-496b-a47d-3aa77b50ab2c.png)
 
+### Future Features
+
+1. Possibility of more game options to give repeat players variety in the game. 
+2. A score board to compare results.
+3. Adding a multiplayer option.
+
 ## Technologies Used
 
 Python3 
@@ -163,7 +169,9 @@ Tests 8 and 9 were carried out for each question that asked the user to type "a"
 
 ### Compatibility 
 
-Tests were carried out on Google Chrome, Safari.
+Functional tests were carried out on Google Chrome, Safari, Firefox and Microsoft Edge and passed. 
+
+The app does not work on mobile devices at this time. The game loads but the user is unable to type anything without a proper keyboard.
 
 ### Testing User Stories
 
@@ -186,6 +194,16 @@ PASS - Typing yes when the prompt asks if they'd like to start again takes the p
 5. I like games of chance, leaving the outcome partly to the dice.
 
 PASS - The dice roll check adds an element of chance. While decisions the player makes can give them an extra point for free or lead to an instant fail, the outcome is dependant on dice rolls. A random number is generated (1-10) for both the user and the opposing team (the computer). The score increments depending on which team's roll is higher. 
+
+## Known Bugs
+
+### Fixed Bugs
+
+An empty space was enterpreted as a valid username. The cause of the bug was unnecessary nesting inside the if statement. Removing this unnecessary indentation fixed the bug.
+
+### Unfixed Bugs
+
+Beside the incompatibility with mobile devices, there are no unfixed bugs in the application.
 
 ## Deployment
 
