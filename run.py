@@ -65,8 +65,8 @@ def main():
                " group of assassins, the\nSmiling Shadows."
                " As the game proceeds, you will be provided"
                " options that you\ncan choose from by entering"
-               " 'a' or 'b' into the terminal. A total of\ntwo"
-               " points for the team of your choice is"
+               " 'a' or 'b' into the terminal. A total of two\n"
+               "points for the team of your choice is"
                " needed to win the game. Good luck!\n")
     pretty_print()
     while True:
