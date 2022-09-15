@@ -349,7 +349,7 @@ def bad_guy_final():
                        " B: Blend in to the surroundings,"
                        " behaving like any other\n passerby"
                        " before attacking once close"
-                       "enough.\n").lower().strip()
+                       " enough.\n").lower().strip()
         if ambush == "a":
             slow_print("\nYou leap out of the bushes and Bill,"
                        " startled by your presence\nscreams"
@@ -457,7 +457,7 @@ def start_again():
     display to user.
     User can start again without needing to go
     through the introduction or input their username
-    by typing 'a' or exit to the main page by typing
+    by typing 'a' or return to the main page by typing
     'b'.
     The While loop persists until the user types a valid input.
     """
