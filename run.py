@@ -61,7 +61,7 @@ def main():
                " game set in the city of Arx - based on\nthe"
                " text-based RPG Arx - After the Reckoning."
                " You can choose to play as members\nof the"
-               " Ion Guard (the city watch) or the elusive"
+               " Iron Guard (the city watch) or the elusive"
                " group of assassins, the Smiling\nShadows."
                " As the game proceeds, you will be provided"
                " options that you can\nchoose from by entering"

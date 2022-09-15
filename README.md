@@ -24,7 +24,7 @@ To plan out the structure of the game, I used [smartdraw](https://cloud.smartdra
 
 ## Features
 
-Opening the app takes the user to a browser hosted by heroku. The headings for the game are at the top using Georgia font and an off-white color against a teal background. 
+Opening the app takes the user to a browser hosted by heroku. The headings for the game are at the top using Georgia font and an off-white color (#dbe4e7) against a teal (#1f2e39) background. 
 
 ![Screenshot 2022-09-13 at 11 40 46](https://user-images.githubusercontent.com/103432143/189881224-aaf1f30d-e772-44fa-8d3e-41fd8696343c.png)
 
@@ -199,7 +199,8 @@ PASS - The dice roll check adds an element of chance. While decisions the player
 
 ### Fixed Bugs
 
-An empty space was enterpreted as a valid username. The cause of the bug was unnecessary nesting inside the if statement. Removing this unnecessary indentation fixed the bug.
+1. An empty space was interpreted as a valid username. The cause of the bug was unnecessary nesting inside the if statement. Removing this unnecessary indentation of the is.alpha() fixed the bug.
+2. An empty space before the username was invalid because a space is not an a-z letter. Adding the strip() method solved this issue. 
 
 ### Unfixed Bugs
 
@@ -209,13 +210,33 @@ Beside the incompatibility with mobile devices, there are no unfixed bugs in the
 
 ### Deploying the App
 
+1. Create a Heroku account or log in if you have one.
+2. Click on the "Create new app" button on the dashboard.
+3. Give the app a unique name. (For this one kill-or-save-bill was used.) 
+4. Select your region.
+5. Click on the settings tab. 
+6. Add a Config Var with the key PORT and the value 8000.
+7. Add the builpacks python and node.js in that order, with python on top, and save changes.
+8. Click on the deploy tab.
+9. Connect to Github under deployment method, search the repository you wish to link to and click 'connect'.
+10. Select either automatic or manual deploy. The former rebuilds the app everytime you git push. 
+11. You will see an "App was successfully deployed" message.
+12. The application can be run by clicking 'Open App'.
+
 ### Cloning the Repository
+
+1. Log on to your Github account and head to the main page of the repository you wish to clone.
+2. Click on the 'Code' button above the list of files and choose from HTTPS, SSH or Github CLI, to copy the URL provided.
+3. Open terminal and ensure you are in the correct location.
+4. Type in 'git clone' and paste the URL you'd copied in step 2 and press enter.
 
 ## Acknowledgements 
 
 I would like to thank my mentor, Brian Macharia for his help during the process and offering much needed advice. 
 
 My friend, Victoria for talking through some problems with me. 
+
+My friend Daniel for spotting typos. 
 
 Dan and Dave, creators of [Arx - After the Recknoning](https://play.arxmush.org/) for the lore that inspired this game.
 
