@@ -2,11 +2,29 @@
 
 # Kill (or save) Bill 
 
-Kill (or save) Bill is A Choose Your Own Adventure style game created using Python 3 based on story elements of the text-based RPG Arx - After the Reckoning. It's a minigame that players of the game or simply anyone who enjoys that style of game can play in their downtime, choosing to either play as an assassin of the Smiling Shadows or a member of the Iron Guard, defenders of the city. The game uses a score based system with a goal to get a higher score before the other team (the computer).
+Kill (or save) Bill is A Choose Your Own Adventure style game created using Python based on story elements of the text-based RPG Arx - After the Reckoning. It's a minigame that players of the game or simply anyone who enjoys that style of game can play in their downtime, choosing to either play as an assassin of the Smiling Shadows or a member of the Iron Guard, defenders of the city. The game uses a score based system with a goal to get a higher score before the other team (the computer).
 
 [For the deployed app, click here.](https://kill-or-save-bill.herokuapp.com/)
 
-## User Experience (UX)
+![Screenshot 2022-09-15 at 10 26 21](https://user-images.githubusercontent.com/103432143/190368063-cc78d386-cf64-43c0-b69d-4e2115c734f6.png)
+
+## Table of Contents
+
+[User Experience (UX)](#user-experience)
+
+[Features](#features)
+
+[Technologies Used](#technologies-used)
+
+[Testing](#testing)
+
+[Known Bugs](#known-bugs)
+
+[Deployment](#deployment)
+
+[Acknowledgements](#acknowledgements)
+
+## User Experience (UX) <a name="user-experience">
 
 ### User Stories
 
@@ -22,9 +40,9 @@ To plan out the structure of the game, I used [smartdraw](https://cloud.smartdra
 
 ![](https://github.com/Hasmelash95/kill-or-save-bill/blob/main/README-assets/flowchart/flowchart.png)
 
-## Features
+## Features <a name="features">
 
-Opening the app takes the user to a browser hosted by heroku. The headings for the game are at the top using Georgia font and an off-white color (#dbe4e7) against a teal (#1f2e39) background. 
+Opening the app takes the user to a browser hosted by heroku. The headings for the game are at the top using Georgia font and an off-white color `#dbe4e7` against a teal `#1f2e39` background. 
 
 ![Screenshot 2022-09-13 at 11 40 46](https://user-images.githubusercontent.com/103432143/189881224-aaf1f30d-e772-44fa-8d3e-41fd8696343c.png)
 
@@ -32,7 +50,7 @@ Opening the app takes the user to a browser hosted by heroku. The headings for t
 
 The intro text introduces the game and gives the player instructions in second person to go along with the adventure theme. Slow print is used to print the text one letter at a time for the ambience. It also provides the current scores for the two teams, which at the start will be 0. User is provided the option to proceed by typing "go". 
 
-![Screenshot 2022-09-13 at 11 43 32](https://user-images.githubusercontent.com/103432143/189881843-7cbdafec-8dd8-401e-a14f-e3786d22c480.png)
+![Screenshot 2022-09-15 at 10 24 57](https://user-images.githubusercontent.com/103432143/190367803-6745a556-9bd8-42e4-9c28-d31eb6420691.png)
 
 Typing anything other than "go" will prompt the invalid input message and the user will be asked to type "go" again.
 
@@ -50,10 +68,9 @@ Typing go will clear the terminal and ask user to input their username. Username
 
 ### Choose Game
 
-Entering a valid username will clear the terminal and take the user to the option to choose the game they want to play. To play as an Iron Guard or an Shadow. Typing any option other than "a" or "b" will prompt an invalid input message. "A", "B", " a", " b" are all valid inputs due to the strip() and lower() methods. 
+Entering a valid username will clear the terminal and take the user to the option to choose the game they want to play. To play as an Iron Guard or a Shadow. Typing any option other than "a" or "b" will prompt an invalid input message. "A", "B", " a", " b" are all valid inputs due to the strip() and lower() methods. 
 
 ![Screenshot 2022-09-13 at 12 49 57](https://user-images.githubusercontent.com/103432143/189893563-cb7e6cf7-b89c-4807-a13f-003a3d0179bf.png)
-
 
 ### First Decision
 
@@ -120,9 +137,9 @@ Typing "exit" or "Exit" or " exit" will exit the app.
 2. A score board to compare results.
 3. Adding a multiplayer option.
 
-## Technologies Used
+## Technologies Used <a name="technologies-used"> 
 
-Python3 
+Python 
 
 HTML5
 
@@ -136,7 +153,7 @@ Git
 
 Heroku 
 
-## Testing
+## Testing <a name="testing">
 
 ### Validation
 
@@ -195,7 +212,7 @@ PASS - Typing yes when the prompt asks if they'd like to start again takes the p
 
 PASS - The dice roll check adds an element of chance. While decisions the player makes can give them an extra point for free or lead to an instant fail, the outcome is dependant on dice rolls. A random number is generated (1-10) for both the user and the opposing team (the computer). The score increments depending on which team's roll is higher. 
 
-## Known Bugs
+## Known Bugs <a name="known-bugs">
 
 ### Fixed Bugs
 
@@ -204,9 +221,9 @@ PASS - The dice roll check adds an element of chance. While decisions the player
 
 ### Unfixed Bugs
 
-Beside the incompatibility with mobile devices, there are no unfixed bugs in the application.
+Aside from the incompatibility with mobile devices, there are no unfixed bugs in the application.
 
-## Deployment
+## Deployment <a name="deployment">
 
 ### Deploying the App
 
@@ -230,7 +247,7 @@ Beside the incompatibility with mobile devices, there are no unfixed bugs in the
 3. Open terminal and ensure you are in the correct location.
 4. Type in 'git clone' and paste the URL you'd copied in step 2 and press enter.
 
-## Acknowledgements 
+## Acknowledgements <a name="acknowledgements">
 
 I would like to thank my mentor, Brian Macharia for his help during the process and offering much needed advice. 
 
